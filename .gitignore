@@ -1,3 +1,6 @@
+# Ignore Crowdsignals folder
+Python3Code/datasets/crowdsignals/**
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
