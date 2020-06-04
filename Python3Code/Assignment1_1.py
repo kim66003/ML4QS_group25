@@ -50,7 +50,7 @@ granularities = [250]
 if __name__ == '__main__':
        for granularity in granularities:
               for i, activity_path in enumerate(activity_paths):
-                     print()
+                     print('Activity: ', activity_path)
                      dataset = CreateDataset(activity_path, granularity)
 
                      for sensor_name, sensor_axis in sensors.items():
@@ -67,7 +67,8 @@ if __name__ == '__main__':
                                                          save_path=activities[i])
                      DataViz.plot_dataset(dataset, [x for x in axis_abbreviations.values()],
                                           ['like' for x in axis_abbreviations.keys()],
-                                          ['line' for x in axis_abbreviations.keys()], save_path=activities[i])
+                                          ['line' for x in axis_abbreviations.keys()],
+                                          save_path=str(granularity) + '/' + activities[i])
 
 
 
