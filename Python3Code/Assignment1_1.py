@@ -44,7 +44,7 @@ axis_abbreviations = {'Accelerometer.csv': 'acc_', 'Gyroscope.csv': 'gyr_', 'Lin
 
 time_column_name = 'Time (s)'
 
-granularities = [250]
+granularities = [60000, 1000, 250]
 
 
 if __name__ == '__main__':
@@ -64,7 +64,7 @@ if __name__ == '__main__':
                      for sensor_name, sensor_axis in sensors.items():
                             DataViz.plot_dataset_boxplot(dataset, [
                                    axis_abbreviations[sensor_name] + x for x in sensors[sensor_name]],
-                                                         save_path=activities[i])
+                                                         save_path=str(granularity) + '/' +activities[i])
                      DataViz.plot_dataset(dataset, [x for x in axis_abbreviations.values()],
                                           ['like' for x in axis_abbreviations.keys()],
                                           ['line' for x in axis_abbreviations.keys()],
