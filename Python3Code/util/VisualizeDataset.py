@@ -33,12 +33,17 @@ class VisualizeDataset:
         self.figures_dir.mkdir(exist_ok=True, parents=True)
 
 
-    def save(self, plot_obj, formats=('png',)): # 'svg'
+    def save(self, plot_obj, formats=('png',), save_path=None): # 'svg'
 
         fig_name = f'figure_{self.plot_number}'
 
         for format in formats:
-            save_path = self.figures_dir / f'{fig_name}.{format}'
+            if save_path is None:
+                save_path = self.figures_dir / f'{fig_name}.{format}'
+            else:
+                (self.figures_dir / Path(save_path)).mkdir(exist_ok=True, parents=True)
+                save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
+            print(save_path)
             plot_obj.savefig(save_path)
             print(f'Figure saved to {save_path}')
 
@@ -48,7 +53,7 @@ class VisualizeDataset:
     # among multiple attributes (e.g. label which occurs as labelWalking, etc). In such a case they are plotted
     # in the same graph. The display should express whether points or a line should be plotted.
     # Match can be 'exact' or 'like'. Display can be 'points' or 'line'.
-    def plot_dataset(self, data_table, columns, match='like', display='line'):
+    def plot_dataset(self, data_table, columns, match='like', display='line', save_path=None):
         names = list(data_table.columns)
 
         # Create subplots if more columns are specified.
@@ -108,11 +113,11 @@ class VisualizeDataset:
         # Make sure we get a nice figure with only a single x-axis and labels there.
         plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
         plt.xlabel('time')
-        self.save(plt)
+        self.save(plt, save_path=save_path)
         plt.show()
 
     def plot_xy(self, x, y, method='plot', xlabel=None, ylabel=None, xlim=None, ylim=None, names=None,
-                line_styles=None, loc=None, title=None):
+                line_styles=None, loc=None, title=None, save_path=None):
         for input in x, y:
             if not hasattr(input[0], '__iter__'):
                 raise TypeError('x/y should be given as a list of lists of coordinates')
@@ -129,23 +134,23 @@ class VisualizeDataset:
             if title is not None: plt.title(title)
             if names is not None: plt.legend(names)
 
-        self.save(plt)
+        self.save(plt, save_path=save_path)
         plt.show()
 
-    def plot_dataset_boxplot(self, dataset, cols):
+    def plot_dataset_boxplot(self, dataset, cols, save_path=None):
         plt.Figure(); dataset[cols].plot.box()
         plt.ylim([-30,30])
-        self.save(plt)
+        self.save(plt, save_path=save_path)
         plt.show()
 
     # This function plots the real and imaginary amplitudes of the frequencies found in the Fourier transformation.
-    def plot_fourier_amplitudes(self, freq, ampl_real, ampl_imag):
+    def plot_fourier_amplitudes(self, freq, ampl_real, ampl_imag, save_path=None):
         plt.xlabel('Freq(Hz)')
         plt.ylabel('amplitude')
         # Plot the real values as a '+' and imaginary in the same way (though with a different color).
         plt.plot(freq, ampl_real, '+', freq, ampl_imag,'+')
         plt.legend(['real', 'imaginary'], numpoints=1)
-        self.save(plt)
+        self.save(plt, save_path=save_path)
         plt.show()
 
     # Plot outliers in case of a binary outlier score. Here, the col specifies the real data
@@ -203,7 +208,7 @@ class VisualizeDataset:
     # by means of different types of points. We assume that three data columns are clustered
     # that do not include the label. We assume the labels to be represented by 1 or more binary
     # columns.
-    def plot_clusters_3d(self, data_table, data_cols, cluster_col, label_cols):
+    def plot_clusters_3d(self, data_table, data_cols, cluster_col, label_cols, save_path=None):
 
         color_index = 0
         point_displays = ['+', 'x', '*', 'd', 'o', 's', '<', '>']
@@ -241,13 +246,13 @@ class VisualizeDataset:
             color_index += 1
 
         plt.legend(handles, labels, fontsize='xx-small', numpoints=1)
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # This function plots the silhouettes of the different clusters that have been identified. It plots the
     # silhouette of the individual datapoints per cluster to allow studying the clusters internally as well.
     # For this, a column expressing the silhouette for each datapoint is assumed.
-    def plot_silhouette(self, data_table, cluster_col, silhouette_col):
+    def plot_silhouette(self, data_table, cluster_col, silhouette_col, save_path=None):
         # Taken from the examples of scikit learn
         #(http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
 
@@ -287,7 +292,7 @@ class VisualizeDataset:
 
         ax1.set_yticks([])  # Clear the yaxis labels / ticks
         ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # Plot a dendorgram for hierarchical clustering. It assumes that the linkage as
@@ -300,12 +305,12 @@ class VisualizeDataset:
         times = dataset.index.strftime('%H:%M:%S')
         #dendrogram(linkage,truncate_mode='lastp',p=10, show_leaf_counts=True, leaf_rotation=90.,leaf_font_size=12.,show_contracted=True, labels=times)
         dendrogram(linkage,truncate_mode='lastp',p=16, show_leaf_counts=True, leaf_rotation=45.,leaf_font_size=8.,show_contracted=True, labels=times)
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # Plot the confusion matrix that has been derived in the evaluation metrics. Classes expresses the labels
     # for the matrix. We can normalize or show the raw counts. Of course this applies to classification problems.
-    def plot_confusion_matrix(self, cm, classes, normalize=False):
+    def plot_confusion_matrix(self, cm, classes, normalize=False, save_path=None):
         # Taken from http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html
 
         # Select the colormap.
@@ -327,13 +332,13 @@ class VisualizeDataset:
         plt.tight_layout()
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # This function plots the predictions or an algorithms (both for the training and test set) versus the real values for
     # a regression problem. It assumes only a single value to be predicted over a number of cases. The variables identified
     # with reg_ are the predictions.
-    def plot_numerical_prediction_versus_real(self, train_time, train_y, regr_train_y, test_time, test_y, regr_test_y, label):
+    def plot_numerical_prediction_versus_real(self, train_time, train_y, regr_train_y, test_time, test_y, regr_test_y, label, save_path=None):
         self.legends = {}
 
         # Plot the values, training set cases in blue, test set in red.
@@ -365,13 +370,13 @@ class VisualizeDataset:
         plt.annotate('training set', xy=(train_time[int(float(len(train_time))/2)], y_coord_labels*1.02), color='blue', xycoords='data', ha='center')
         plt.annotate('', xy=(test_time[0], y_coord_labels), xycoords='data', xytext=(test_time[-1], y_coord_labels), textcoords='data', arrowprops={'arrowstyle': '<->'})
         plt.annotate('test set', xy=(test_time[int(float(len(test_time))/2)], y_coord_labels*1.02), color='red', xycoords='data', ha='center')
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # Plot the Pareto front for multi objective optimization problems (for the dynamical systems stuff). We consider the
     # raw output of the MO dynamical systems approach, which includes rows with the fitness and predictions for the training
     # and test set. We select the fitness and plot them in a graph. Note that the plot only considers the first two dimensions.
-    def plot_pareto_front(self, dynsys_output):
+    def plot_pareto_front(self, dynsys_output, save_path=None):
         fit_1_train = []
         fit_2_train = []
         fit_1_test = []
@@ -384,7 +389,7 @@ class VisualizeDataset:
         plt.xlabel('mse on ' + str(dynsys_output[0][0].columns[0]))
         plt.ylabel('mse on ' + str(dynsys_output[0][0].columns[1]))
         #plt.savefig('{0} Example ({1}).pdf'.format(ea.__class__.__name__, problem.__class__.__name__), format='pdf')
-        self.save(plt)
+        self.save(plt, save_path)
         plt.show()
 
     # Plot a prediction for a regression model in case it concerns a multi-objective dynamical systems model. Here, we plot
