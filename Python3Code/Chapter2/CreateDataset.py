@@ -18,10 +18,10 @@ import matplotlib.dates as md
 
 class CreateDataset:
 
-    def __init__(self, base_dir, granularity, data_table):
+    def __init__(self, base_dir, granularity,):
         self.base_dir = base_dir
         self.granularity = granularity
-        self.data_table = data_table
+        self.data_table = None
 
     # Create an initial data table with entries from start till end time, with steps
     # of size granularity. Granularity is specified in milliseconds
@@ -40,7 +40,6 @@ class CreateDataset:
     def add_numerical_dataset(self, file, timestamp_col, value_cols, aggregation='avg', prefix=''):
         print(f'Reading data from {file}')
         dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
-
         # Convert timestamps to dates
         dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
 
