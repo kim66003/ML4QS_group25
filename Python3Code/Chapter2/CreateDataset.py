@@ -18,10 +18,10 @@ import matplotlib.dates as md
 
 class CreateDataset:
 
-    def __init__(self, base_dir, granularity,):
+    def __init__(self, base_dir, granularity, data_table=None):
         self.base_dir = base_dir
         self.granularity = granularity
-        self.data_table = None
+        self.data_table = data_table
 
     # Create an initial data table with entries from start till end time, with steps
     # of size granularity. Granularity is specified in milliseconds
