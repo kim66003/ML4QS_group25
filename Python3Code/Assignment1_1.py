@@ -2,6 +2,7 @@
 from Chapter2.CreateDataset import CreateDataset
 from util.VisualizeDataset import VisualizeDataset
 import pandas as pd
+import matplotlib.pyplot as plt
 
 activity_paths = [
        'datasets/Walking_2020-06-04_12-53-11/',
@@ -46,19 +47,38 @@ time_column_name = 'Time (s)'
 
 granularities = [60000, 1000, 250]
 
+task = '1_1'
 
 if __name__ == '__main__':
+       if task == '1_1':
+              sensor = 'Gyroscope.csv'
+              dataset = CreateDataset('datasets/Running_2020-06-04_12-40-48/', 250)
+              dataset.add_numerical_dataset('Gyroscope.csv', time_column_name, sensors[sensor], 'avg',
+                                            axis_abbreviations[sensor])
+              dataset = dataset.data_table
+              print(dataset.shape)
+              fig = plt.figure(figsize=(5, 3.5))
+              ax = fig.add_subplot(111)
+              ax.boxplot([dataset['gyr_Gyroscope x (rad/s)'], dataset['gyr_Gyroscope y (rad/s)'],
+                          dataset['gyr_Gyroscope z (rad/s)']], widths = 0.6)
+              xlabels = ["gyr_x", "gyr_y", 'gyr_z']
+              ax.set_xticklabels(xlabels)
+              plt.ylim([-5, 5])
+              plt.savefig('figures/1_1_selected/running_gyr_250.png')
+
+
+       if task != 'create_plots':
+              exit(2)
+
        for granularity in granularities:
               for i, activity_path in enumerate(activity_paths):
                      print('Activity: ', activity_path)
                      dataset = CreateDataset(activity_path, granularity)
 
                      for sensor_name, sensor_axis in sensors.items():
-                            dataset.add_numerical_dataset(sensor_name, 'Time (s)', sensor_axis, 'avg', axis_abbreviations[
+                            dataset.add_numerical_dataset(sensor_name, time_column_name, sensor_axis, 'avg', axis_abbreviations[
                                    sensor_name])
                      dataset = dataset.data_table
-
-
 
                      DataViz = VisualizeDataset(__file__)
                      for sensor_name, sensor_axis in sensors.items():
