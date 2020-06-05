@@ -23,16 +23,30 @@ class OutlierExperiment:
     def chauvenet(self, C):
         for col in self.outlier_columns:
             print(f"Applying outlier criteria for column {col}")
-            dataset = self.OutlierDistr.chauvenet(self.dataset, col, C)
-            self.DataViz.plot_binary_outliers(dataset, col, col + '_outlier')
+            self.OutlierDistr.chauvenet(self.dataset, col, C)
+            self.DataViz.plot_binary_outliers(self.dataset, col, col + '_outlier')
+            print(self.dataset['acc_phone_x_outlier'])
+            cols_to_remove = [col + '_outlier', col + '_mixture', 'simple_dist_outlier', 'lof']
+            for to_remove in cols_to_remove:
+                if to_remove in self.dataset:
+                    del self.dataset[to_remove]
 
     def mixture_model(self, n):
         for col in self.outlier_columns:
             print(f"Applying outlier criteria for column {col}")
-            dataset = self.OutlierDistr.mixture_model(self.dataset, col, n)
-            self.DataViz.plot_binary_outliers(dataset, col, col + '_outlier')
+            self.OutlierDistr.mixture_model(self.dataset, col, n)
+            self.DataViz.plot_binary_outliers(self.dataset, col, col + '_outlier')
 
-    
+    def simple_distance_based(self, d_min, f_min):
+        for col in self.outlier_columns:
+            print(f"Applying outlier criteria for column {col}")
+            self.OutlierDist.simple_distance_based(self.dataset, [col], 'euclidean', d_min, f_min)
+            self.DataViz.plot_binary_outliers(self.dataset, col, col + '_outlier')
+
+    def local_outlier_factor(self, k):
+        for col in self.outlier_columns:
+            print(f"Applying outlier criteria for column {col}")
+
 
 
 
