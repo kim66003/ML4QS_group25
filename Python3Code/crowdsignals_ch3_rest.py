@@ -58,12 +58,13 @@ for col in [c for c in dataset.columns if not 'label' in c]:
 original_dataset = pd.read_csv(DATA_PATH / ORIG_DATASET_FNAME, index_col=0)
 original_dataset.index = pd.to_datetime(original_dataset.index)
 KalFilter = KalmanFilters()
-kalman_dataset = KalFilter.apply_kalman_filter(original_dataset, 'acc_phone_x')
+kalman_dataset = KalFilter.apply_kalman_filter(original_dataset, 'hr_watch_rate')
 DataViz.plot_imputed_values(kalman_dataset, ['original', 'kalman'], 'hr_watch_rate', kalman_dataset['hr_watch_rate_kalman'])
 DataViz.plot_dataset(kalman_dataset, ['hr_watch_rate', 'hr_watch_rate_kalman'], ['exact','exact'], ['line', 'line'])
 
 # We ignore the Kalman filter output for now...
 
+exit()
 # Let us apply a lowpass filter and reduce the importance of the data above 1.5 Hz
 
 LowPass = LowPassFilter()
@@ -96,6 +97,11 @@ selected_predictor_cols = [c for c in dataset.columns if (not ('label' in c)) an
 pc_values = PCA.determine_pc_explained_variance(dataset, selected_predictor_cols)
 
 # Plot the variance explained.
+
+assert dataset.index.dtype == '<M8[ns]', dataset.index.dtype
+
+print(selected_predictor_cols)
+
 DataViz.plot_xy(x=[range(1, len(selected_predictor_cols)+1)], y=[pc_values],
                 xlabel='principal component number', ylabel='explained variance',
                 ylim=[0,1], line_styles=['b-'])
