@@ -56,7 +56,6 @@ if __name__ == '__main__':
               dataset.add_numerical_dataset('Gyroscope.csv', time_column_name, sensors[sensor], 'avg',
                                             axis_abbreviations[sensor])
               dataset = dataset.data_table
-              print(dataset.shape)
               fig = plt.figure(figsize=(5, 3.5))
               ax = fig.add_subplot(111)
               ax.boxplot([dataset['gyr_Gyroscope x (rad/s)'], dataset['gyr_Gyroscope y (rad/s)'],
@@ -65,7 +64,6 @@ if __name__ == '__main__':
               ax.set_xticklabels(xlabels)
               plt.ylim([-5, 5])
               plt.savefig('figures/1_1_selected/running_gyr_250.png')
-
 
        if task != 'create_plots':
               exit(2)
@@ -89,6 +87,4 @@ if __name__ == '__main__':
                                           ['like' for x in axis_abbreviations.keys()],
                                           ['line' for x in axis_abbreviations.keys()],
                                           save_path=str(granularity) + '/' + activities[i])
-
-
 
