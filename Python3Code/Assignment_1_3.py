@@ -14,6 +14,7 @@ data_file = 'chapter2_result.csv'
 class OutlierExperiment:
     def __init__(self, data_path, data_file):
         self.dataset = pd.read_csv(Path(data_path / data_file), index_col=0)
+        self.dataset =  self.dataset[:14780]
         self.dataset.index = pd.to_datetime(self.dataset.index)
         self.DataViz = VisualizeDataset(__file__, show=False)
         self.outlier_columns = ['acc_phone_x', 'light_phone_lux']
@@ -48,7 +49,7 @@ class OutlierExperiment:
             print(f"Applying outlier criteria for column {col}")
             self.dataset = self.OutlierDist.simple_distance_based(self.dataset, [col], 'euclidean', d_min, f_min)
             self.DataViz.plot_binary_outliers(self.dataset, col, 'simple_dist_outlier')
-            self.num_outliers[col] = self.dataset[self.dataset[col + 'simple_dist_outlier'] == 1][col].size / self.dataset[
+            self.num_outliers[col] = self.dataset[self.dataset['simple_dist_outlier'] == 1][col].size / self.dataset[
                 col].size
 
     def local_outlier_factor(self, k):
