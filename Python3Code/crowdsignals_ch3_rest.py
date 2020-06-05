@@ -58,9 +58,9 @@ for col in [c for c in dataset.columns if not 'label' in c]:
 original_dataset = pd.read_csv(DATA_PATH / ORIG_DATASET_FNAME, index_col=0)
 original_dataset.index = pd.to_datetime(original_dataset.index)
 KalFilter = KalmanFilters()
-kalman_dataset = KalFilter.apply_kalman_filter(original_dataset, 'acc_phone_x')
-DataViz.plot_imputed_values(kalman_dataset, ['original', 'kalman'], 'acc_phone_x', kalman_dataset['acc_phone_x_kalman'])
-DataViz.plot_dataset(kalman_dataset, ['acc_phone_x', 'acc_phone_x_kalman'], ['exact','exact'], ['line', 'line'])
+kalman_dataset = KalFilter.apply_kalman_filter(original_dataset, 'hr_watch_rate')
+DataViz.plot_imputed_values(kalman_dataset, ['original', 'kalman'], 'hr_watch_rate', kalman_dataset['hr_watch_rate_kalman'])
+DataViz.plot_dataset(kalman_dataset, ['hr_watch_rate', 'hr_watch_rate_kalman'], ['exact','exact'], ['line', 'line'])
 
 # We ignore the Kalman filter output for now...
 

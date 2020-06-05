@@ -97,5 +97,5 @@ if __name__ == '__main__':
         output.append(str([k, experiment.num_outliers]))
         experiment.remove_columns()
 
-    with open('1_3_output.txt','w+') as f:
+    with open('results/1_3_output.txt','w+') as f:
         f.write(str(output))
