@@ -51,12 +51,16 @@ class OutlierExperiment:
             self.DataViz.plot_binary_outliers(self.dataset, col, 'simple_dist_outlier')
             self.num_outliers[col] = self.dataset[self.dataset['simple_dist_outlier'] == 1][col].size / self.dataset[
                 col].size
+            self.remove_columns()
 
     def local_outlier_factor(self, k):
         for col in self.outlier_columns:
             print(f"Applying outlier criteria for column {col}")
             self.dataset = self.OutlierDist.local_outlier_factor(self.dataset, [col], 'euclidean', k)
             self.DataViz.plot_dataset(self.dataset, [col, 'lof'], ['exact','exact'], ['line', 'points'])
+            self.num_outliers[col] = self.dataset[self.dataset['lof'] == 1][col].size / self.dataset[
+                col].size
+            self.remove_columns()
 
 
 if __name__ == '__main__':
