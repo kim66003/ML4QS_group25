@@ -94,4 +94,3 @@ if __name__ == '__main__':
 
     with open('1_3_output.txt','w+') as f:
         f.write(str(output))
-    

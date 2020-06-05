@@ -25,9 +25,9 @@ class VisualizeDataset:
     colors = ['r', 'g', 'b', 'c', 'm', 'y', 'k']
 
     # Set some initial attributes to define and create a save location for the images.
-    def __init__(self, module_path='.py'):
+    def __init__(self, module_path='.py', show=True):
         subdir = Path(module_path).name.split('.')[0]
-
+        self.show = show
         self.plot_number = 1
         self.figures_dir = Path('figures') / subdir
         self.figures_dir.mkdir(exist_ok=True, parents=True)
@@ -114,7 +114,8 @@ class VisualizeDataset:
         plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
         plt.xlabel('time')
         self.save(plt, save_path=save_path)
-        plt.show()
+        if self.show:
+            plt.show()
 
     def plot_xy(self, x, y, method='plot', xlabel=None, ylabel=None, xlim=None, ylim=None, names=None,
                 line_styles=None, loc=None, title=None, save_path=None):
@@ -135,14 +136,16 @@ class VisualizeDataset:
             if names is not None: plt.legend(names)
 
         self.save(plt, save_path=save_path)
-        plt.show()
+        if self.show:
+            plt.show()
 
     def plot_dataset_boxplot(self, dataset, cols, save_path=None):
         plt.Figure()
         dataset[cols].plot.box()
         plt.ylim([-30,30])
         self.save(plt, save_path=save_path)
-        plt.show()
+        if self.show:
+            plt.show()
 
     # This function plots the real and imaginary amplitudes of the frequencies found in the Fourier transformation.
     def plot_fourier_amplitudes(self, freq, ampl_real, ampl_imag, save_path=None):
@@ -152,7 +155,8 @@ class VisualizeDataset:
         plt.plot(freq, ampl_real, '+', freq, ampl_imag,'+')
         plt.legend(['real', 'imaginary'], numpoints=1)
         self.save(plt, save_path=save_path)
-        plt.show()
+        if self.show:
+            plt.show()
 
     # Plot outliers in case of a binary outlier score. Here, the col specifies the real data
     # column and outlier_col the columns with a binary value (outlier or not)
@@ -169,7 +173,8 @@ class VisualizeDataset:
         xar.plot(data_table.index[~data_table[outlier_col]], data_table[col][~data_table[outlier_col]], 'b+')
         plt.legend(['outlier ' + col, 'no_outlier_' + col], numpoints=1, fontsize='xx-small', loc='upper center',  ncol=2, fancybox=True, shadow=True)
         self.save(plt)
-        plt.show()
+        if self.show:
+            plt.show()
 
     # Plot values that have been imputed using one of our imputation approaches. Here, values expresses the
     # 1 to n datasets that have resulted from value imputation.
@@ -202,7 +207,8 @@ class VisualizeDataset:
         plt.setp([a.get_xticklabels() for a in f.axes[:-1]], visible=False)
         plt.xlabel('time')
         self.save(plt)
-        plt.show()
+        if self.show:
+            plt.show()
 
     # This function plots clusters that result from the application of a clustering algorithm
     # and also shows the class label of points. Clusters are displayed via colors, classes
@@ -248,7 +254,9 @@ class VisualizeDataset:
 
         plt.legend(handles, labels, fontsize='xx-small', numpoints=1)
         self.save(plt, save_path)
-        plt.show()
+
+        if self.show:
+            plt.show()
 
     # This function plots the silhouettes of the different clusters that have been identified. It plots the
     # silhouette of the individual datapoints per cluster to allow studying the clusters internally as well.
@@ -294,7 +302,9 @@ class VisualizeDataset:
         ax1.set_yticks([])  # Clear the yaxis labels / ticks
         ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
         self.save(plt, save_path)
-        plt.show()
+
+        if self.show:
+            plt.show()
 
     # Plot a dendorgram for hierarchical clustering. It assumes that the linkage as
     # used in sk learn is passed as an argument as well.
@@ -334,7 +344,9 @@ class VisualizeDataset:
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
         self.save(plt, save_path)
-        plt.show()
+
+        if self.show:
+            plt.show()
 
     # This function plots the predictions or an algorithms (both for the training and test set) versus the real values for
     # a regression problem. It assumes only a single value to be predicted over a number of cases. The variables identified
@@ -391,7 +403,9 @@ class VisualizeDataset:
         plt.ylabel('mse on ' + str(dynsys_output[0][0].columns[1]))
         #plt.savefig('{0} Example ({1}).pdf'.format(ea.__class__.__name__, problem.__class__.__name__), format='pdf')
         self.save(plt, save_path)
-        plt.show()
+
+        if self.show:
+            plt.show()
 
     # Plot a prediction for a regression model in case it concerns a multi-objective dynamical systems model. Here, we plot
     # the individual specified. Again, the complete output of the MO approach is used as argument.

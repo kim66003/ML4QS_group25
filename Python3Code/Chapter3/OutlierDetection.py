@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import util.util as util
 import copy
+from tqdm import tqdm
 
 # Class for outlier detection algorithms based on some distribution of the data. They
 # all consider only single points per row (i.e. one column).
@@ -94,7 +95,7 @@ class DistanceBasedOutlierDetection:
 
         mask = []
         # Pass the rows in our table.
-        for i in range(0, len(new_data_table.index)):
+        for i in tqdm(range(0, len(new_data_table.index))):
             # Check what faction of neighbors are beyond dmin.
             frac = (float(sum([1 for col_val in self.distances.iloc[i,:].tolist() if col_val > dmin]))/len(new_data_table.index))
             # Mark as an outlier if beyond the minimum frequency.
@@ -119,7 +120,7 @@ class DistanceBasedOutlierDetection:
 
         outlier_factor = []
         # Compute the outlier score per row.
-        for i in range(0, len(new_data_table.index)):
+        for i in tqdm(range(0, len(new_data_table.index))):
             if i%100==0: print(f'Completed {i} steps for LOF.')
             outlier_factor.append(self.local_outlier_factor_instance(i, k))
         data_outlier_probs = pd.DataFrame(outlier_factor, index=new_data_table.index, columns=['lof'])

@@ -66,6 +66,7 @@ def main():
         try:
             dataset = OutlierDist.simple_distance_based(dataset, [col], 'euclidean', 0.10, 0.99)
             DataViz.plot_binary_outliers(dataset, col, 'simple_dist_outlier')
+            print(dataset['simple_dist_outlier'].mean())
         except MemoryError as e:
             print('Not enough memory available for simple distance-based outlier detection...')
             print('Skipping.')
