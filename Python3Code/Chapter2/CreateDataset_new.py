@@ -62,11 +62,6 @@ class CreateDataset:
         else:
             raise ValueError(f"Unknown aggregation {aggregation}")
         
-        # copy data from current dataset to data_table
-#         self.data_table.loc[dataset.index,dataset.columns] = dataset
-            
-        print(f'Added data from {file} to data_table')
-        
 
     # Remove undesired value from the names.
     def clean_name(self, name):
