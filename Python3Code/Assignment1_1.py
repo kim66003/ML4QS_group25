@@ -64,7 +64,8 @@ if __name__ == '__main__':
               ax.set_xticklabels(xlabels)
               plt.ylim([-5, 5])
               plt.savefig('figures/1_1_selected/running_gyr_250.png')
-
+       if task == 'final_plot':
+              dataset = CreateDataset('datasets/Running_2020-06-04_12-40-48/', 250)
        if task != 'create_plots':
               exit(2)
 
