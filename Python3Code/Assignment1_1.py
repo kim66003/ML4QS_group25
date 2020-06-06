@@ -38,7 +38,8 @@ sensors = {
        ],
        'Magnetometer.csv' : [
               "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"
-       ]
+       ],
+        'Labels' : ['label']
 }
 
 axis_abbreviations = {'Accelerometer.csv': 'acc_', 'Gyroscope.csv': 'gyr_', 'Linear Acceleration.csv': 'lin_',
@@ -75,9 +76,10 @@ if __name__ == '__main__':
 
               names = [x[0].split()[0] for x in sensors.values()]
               names[3] = 'Location'
+              print(names)
               DataViz.plot_dataset(dataset, names,
                                    ['like' for x in sensors.keys()],
-                                   ['line' for x in sensors.keys()],
+                                   ['line' for x in list(sensors.keys())[:-1]] + ['points'],
                                    save_path='concatenated_250')
 
 

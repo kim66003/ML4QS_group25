@@ -63,7 +63,7 @@ class VisualizeDataset:
             f, xar = plt.subplots()
             xar = [xar]
 
-        f.subplots_adjust(hspace=0.4)
+        f.subplots_adjust(hspace=0.6)
 
         xfmt = md.DateFormatter('%H:%M')
 
@@ -94,18 +94,18 @@ class VisualizeDataset:
                 mask = data_table[relevant_cols[j]].notnull()
                 max_values.append(data_table[relevant_cols[j]][mask].max())
                 min_values.append(data_table[relevant_cols[j]][mask].min())
-
+                
                 # Display point, or as a line
                 if display[i] == 'points':
                     xar[i].plot(data_table.index[mask], data_table[relevant_cols[j]][mask],
                                 self.point_displays[j%len(self.point_displays)])
                 else:
                     xar[i].plot(data_table.index[mask], data_table[relevant_cols[j]][mask],
-                                self.line_displays[j%len(self.line_displays)])
+                                self.line_displays[j%len(self.line_displays)], linewidth=0.5)
 
             xar[i].tick_params(axis='y', labelsize=10)
             xar[i].legend(relevant_cols, fontsize='xx-small', numpoints=1, loc='upper center',
-                          bbox_to_anchor=(0.5, 1.3), ncol=len(relevant_cols), fancybox=True, shadow=True)
+                          bbox_to_anchor=(0.5, 1.5), ncol=len(relevant_cols), fancybox=True, shadow=True)
 
             xar[i].set_ylim([min(min_values) - 0.1*(max(max_values) - min(min_values)),
                              max(max_values) + 0.1*(max(max_values) - min(min_values))])
