@@ -14,7 +14,7 @@ data_file = 'chapter2_result.csv'
 class OutlierExperiment:
     def __init__(self, data_path, data_file):
         self.dataset = pd.read_csv(Path(data_path / data_file), index_col=0)
-        self.dataset =  self.dataset[:14780]
+        self.dataset =  self.dataset
         self.dataset.index = pd.to_datetime(self.dataset.index)
         self.DataViz = VisualizeDataset(__file__, show=False)
         self.outlier_columns = ['acc_phone_x', 'light_phone_lux']
@@ -42,7 +42,10 @@ class OutlierExperiment:
             print(f"Applying outlier criteria for column {col}")
             self.dataset = self.OutlierDistr.mixture_model(self.dataset, col, n)
             self.DataViz.plot_dataset(self.dataset, [col, col + '_mixture'], ['exact','exact'], ['line', 'points'])
-            self.num_outliers[col] = self.dataset[col + '_mixture'].sum() / self.dataset[col].size
+            self.num_outliers[col] = self.dataset[col + '_mixture'].sum() / self.dataset[col+'_mixture'].size
+            print(self.dataset[col + '_mixture'].max())
+            if self.num_outliers[col] > 1:
+                print(self.dataset[col + '_mixture'])
 
     def simple_distance_based(self, d_min, f_min):
         for col in self.outlier_columns:
@@ -69,17 +72,17 @@ if __name__ == '__main__':
     output = []
     output_2 = []
     c_values = [1, 2, 10]
-    n_values = [1, 2, 3, 4]
-    for c in c_values:
-        for n in n_values:
-            experiment.chauvenet(c)
-            print('chauvenet c=%d'%c, experiment.num_outliers)
-            output.append(str([c, n, experiment.num_outliers]))
-            experiment.mixture_model(n)
-            output_2.append(str([c, n, experiment.num_outliers]))
-            experiment.remove_columns()
-    with open('1_3_chauvenet_and_mixture.txt','w+') as f:
-        f.write(str(output))
+    n_values = [2, 3, 4, 5]
+    # for c in c_values:
+    for n in n_values:
+        # experiment.chauvenet(c)
+        # print('chauvenet c=%d'%c, experiment.num_outliers)
+        # output.append(str([c, n, experiment.num_outliers]))
+        experiment.mixture_model(n)
+        output_2.append(str([n, experiment.num_outliers]))
+        experiment.remove_columns()
+    # with open('1_3_chauvenet_and_mixture.txt','w+') as f:
+    #     f.write(str(output))
     with open('1_3__mixture.txt','w+') as f:
         f.write(str(output_2))
     exit()
