@@ -3,6 +3,7 @@ from Chapter2.CreateDataset import CreateDataset
 from util.VisualizeDataset import VisualizeDataset
 import pandas as pd
 import matplotlib.pyplot as plt
+import pickle
 
 activity_paths = [
        'datasets/Walking_2020-06-04_12-53-11/',
@@ -65,7 +66,7 @@ if __name__ == '__main__':
               plt.ylim([-5, 5])
               plt.savefig('figures/1_1_selected/running_gyr_250.png')
        if task == 'final_plot':
-              dataset = CreateDataset('datasets/Running_2020-06-04_12-40-48/', 250)
+              dataset = pickle.load(open('datasets/dataframes/concat_df_gran_250.pkl'))
        if task != 'create_plots':
               exit(2)
 
