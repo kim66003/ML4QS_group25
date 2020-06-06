@@ -39,5 +39,12 @@ DataViz.plot_dataset_boxplot(dataset_running, ['acc_phone_x','acc_phone_y','acc_
 #                               ['line', 'line', 'line', ])
 
 # And print a summary of the dataset.
-util.print_statistics(dataset)
+print(dataset.columns)
+# print(dataset['acc_phone_x'].max(), dataset['acc_phone_y'].max(), dataset['acc_phone_z'].max())
+print(dataset['acc_phone_x'].min(), dataset['acc_phone_y'].min(), dataset['acc_phone_z'].min())
+print(dataset['acc_phone_x'].mean(), dataset['acc_phone_y'].mean(), dataset['acc_phone_z'].mean())
+print(dataset['acc_phone_x'].std(), dataset['acc_phone_y'].std(), dataset['acc_phone_z'].std())
+util.print_statistics(dataset_walking, describe=True)
+util.print_statistics(dataset_sitting, describe=True)
+util.print_statistics(dataset_running, describe=True)
 

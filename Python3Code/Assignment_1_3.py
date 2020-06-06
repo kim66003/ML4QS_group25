@@ -69,7 +69,7 @@ if __name__ == '__main__':
     output = []
     output_2 = []
     c_values = [1, 2, 10]
-    n_values = [1, 2]
+    n_values = [1, 2, 3, 4]
     for c in c_values:
         for n in n_values:
             experiment.chauvenet(c)
