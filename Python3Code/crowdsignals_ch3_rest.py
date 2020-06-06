@@ -64,7 +64,6 @@ DataViz.plot_dataset(kalman_dataset, ['hr_watch_rate', 'hr_watch_rate_kalman'], 
 
 # We ignore the Kalman filter output for now...
 
-exit()
 # Let us apply a lowpass filter and reduce the importance of the data above 1.5 Hz
 
 LowPass = LowPassFilter()
