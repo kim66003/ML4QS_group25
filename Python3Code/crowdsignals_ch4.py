@@ -39,17 +39,21 @@ milliseconds_per_instance = (dataset.index[1] - dataset.index[0]).microseconds/1
 
 
 # Chapter 4: Identifying aggregate attributes.
+print('attributes time domain')
 
 # First we focus on the time domain.
 
 # Set the window sizes to the number of instances representing 5 seconds, 30 seconds and 5 minutes
 window_sizes = [int(float(5000)/milliseconds_per_instance), int(float(0.5*60000)/milliseconds_per_instance), int(float(5*60000)/milliseconds_per_instance)]
 
+print('total window sizes', window_sizes)
+
 NumAbs = NumericalAbstraction()
 dataset_copy = copy.deepcopy(dataset)
 for ws in window_sizes:
     dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['acc_phone_x'], ws, 'mean')
     dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['acc_phone_x'], ws, 'std')
+    print('window size', ws)
 
 DataViz.plot_dataset(dataset_copy, ['acc_phone_x', 'acc_phone_x_temp_mean', 'acc_phone_x_temp_std', 'label'], ['exact', 'like', 'like', 'like'], ['line', 'line', 'line', 'points'])
 
@@ -64,6 +68,8 @@ DataViz.plot_dataset(dataset, ['acc_phone_x', 'gyr_phone_x', 'hr_watch_rate', 'l
 CatAbs = CategoricalAbstraction()
 dataset = CatAbs.abstract_categorical(dataset, ['label'], ['like'], 0.03, int(float(5*60000)/milliseconds_per_instance), 2)
 
+print('attributes frequency domain')
+
 # Now we move to the frequency domain, with the same window size.
 
 FreqAbs = FourierTransformation()
@@ -73,7 +79,7 @@ periodic_predictor_cols = ['acc_phone_x','acc_phone_y','acc_phone_z','acc_watch_
                            'gyr_phone_z','gyr_watch_x','gyr_watch_y','gyr_watch_z','mag_phone_x','mag_phone_y','mag_phone_z',
                            'mag_watch_x','mag_watch_y','mag_watch_z']
 data_table = FreqAbs.abstract_frequency(copy.deepcopy(dataset), ['acc_phone_x'], int(float(10000)/milliseconds_per_instance), fs)
-
+print('spectral analysis')
 # Spectral analysis.
 
 DataViz.plot_dataset(data_table, ['acc_phone_x_max_freq', 'acc_phone_x_freq_weighted', 'acc_phone_x_pse', 'label'], ['like', 'like', 'like', 'like'], ['line', 'line', 'line','points'])
