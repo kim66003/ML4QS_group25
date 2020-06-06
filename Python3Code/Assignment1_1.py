@@ -68,16 +68,18 @@ if __name__ == '__main__':
 
        if task == 'final_plot':
               dataset = pickle.load(open('datasets/dataframes/concat_df_gran_250.pkl', 'rb'))
-              dataset.drop('Pressure (hPa)', axis=1)
+              # dataset = dataset.drop('Pressure (hPa)', axis=1)
+              dataset = dataset.rename(columns={x: 'Location ' + x for x in sensors['Location.csv']})
 
               DataViz = VisualizeDataset(__file__)
-              print(dataset.columns)
 
-              DataViz.plot_dataset(dataset, [x[0].split()[0] for x in sensors.values()],
+              names = [x[0].split()[0] for x in sensors.values()]
+              names[3] = 'Location'
+              DataViz.plot_dataset(dataset, names,
                                    ['like' for x in sensors.keys()],
                                    ['line' for x in sensors.keys()],
                                    save_path='concatenated_250')
-              
+
 
 
        if task != 'create_plots':
