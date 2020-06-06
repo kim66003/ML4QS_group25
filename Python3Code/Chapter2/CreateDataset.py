@@ -14,6 +14,7 @@ import copy
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plot
 import matplotlib.dates as md
+from tqdm import tqdm
 
 
 class CreateDataset:
@@ -53,7 +54,7 @@ class CreateDataset:
                 self.data_table[str(prefix) + str(col)] = np.nan
 
         # Over all rows in the new table
-        for i in range(0, len(self.data_table.index)):
+        for i in tqdm(range(0, len(self.data_table.index))):
             # Select the relevant measurements.
             relevant_rows = dataset[
                 (dataset[timestamp_col] >= self.data_table.index[i]) &
@@ -78,7 +79,7 @@ class CreateDataset:
     # 'aggregation' can be 'sum' or 'binary'.
     def add_event_dataset(self, file, start_timestamp_col, end_timestamp_col, value_col, aggregation='sum'):
         print(f'Reading data from {file}')
-        dataset = pd.read_csv(self.base_dir / file)
+        dataset = pd.read_csv(self.base_dir + file)
 
         # Convert timestamps to datetime.
         dataset[start_timestamp_col] = pd.to_datetime(dataset[start_timestamp_col])
