@@ -9,6 +9,7 @@
 
 import numpy as np
 import scipy.stats as stats
+from tqdm import tqdm
 
 # Class to abstract a history of numerical values we can use as an attribute.
 class NumericalAbstraction:
@@ -56,7 +57,7 @@ class NumericalAbstraction:
             data_table[col + '_temp_' + aggregation_function + '_ws_' + str(window_size)] = np.nan
         # Pass over the dataset (we cannot compute it when we do not have enough history)
         # and compute the values.
-        for i in range(window_size, len(data_table.index)):
+        for i in tqdm(range(window_size, len(data_table.index))):
             for col in cols:
                 data_table.iloc[i, data_table.columns.get_loc(f'{col}_temp_{aggregation_function}_ws_{window_size}')] = self.aggregate_value(data_table[col].iloc[i-window_size:min(i+1, len(data_table.index))], aggregation_function)
 
