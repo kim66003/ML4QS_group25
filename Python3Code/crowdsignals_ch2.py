@@ -95,6 +95,8 @@ for milliseconds_per_instance in GRANULARITIES:
     DataViz.plot_dataset(dataset, ['acc_', 'gyr_', 'hr_watch_rate', 'light_phone_lux', 'mag_', 'press_phone_', 'label'],
                                   ['like', 'like', 'like', 'like', 'like', 'like', 'like','like'],
                                   ['line', 'line', 'line', 'line', 'line', 'line', 'points', 'points'])
+    
+    exit()
 
     # And print a summary of the dataset.
     util.print_statistics(dataset)
