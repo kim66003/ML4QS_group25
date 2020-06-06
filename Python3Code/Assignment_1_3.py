@@ -78,9 +78,10 @@ if __name__ == '__main__':
             experiment.mixture_model(n)
             output_2.append(str([c, n, experiment.num_outliers]))
             experiment.remove_columns()
-    with open('results/1_3_output.txt','w+') as f:
+    with open('1_3_chauvenet_and_mixture.txt','w+') as f:
         f.write(str(output))
-
+    with open('1_3__mixture.txt','w+') as f:
+        f.write(str(output_2))
     exit()
 
     experiment = OutlierExperiment(data_path, data_file)
