@@ -65,16 +65,23 @@ class OutlierExperiment:
 
 if __name__ == '__main__':
 
-    # experiment = OutlierExperiment(data_path, data_file)
-    # experiment.chauvenet(2)
-    # experiment.mixture_model(1)
-    # print(experiment.num_outliers)
-    # exit()
-    # c_values = [1, 1.5, 2, 5, 7.5, 10, 20]
-    # for c in c_values:
-    #     experiment.chauvenet(c)
-    #     print('chauvenet c=%d'%c, experiment.num_outliers)
-    #     experiment.remove_columns()
+    experiment = OutlierExperiment(data_path, data_file)
+    output = []
+    output_2 = []
+    c_values = [1, 2, 10]
+    n_values = [1, 2]
+    for c in c_values:
+        for n in n_values:
+            experiment.chauvenet(c)
+            print('chauvenet c=%d'%c, experiment.num_outliers)
+            output.append(str([c, n, experiment.num_outliers]))
+            experiment.mixture_model(n)
+            output_2.append(str([c, n, experiment.num_outliers]))
+            experiment.remove_columns()
+    with open('results/1_3_output.txt','w+') as f:
+        f.write(str(output))
+
+    exit()
 
     experiment = OutlierExperiment(data_path, data_file)
     d_mins = [0.1, 0.3, 0.5]
