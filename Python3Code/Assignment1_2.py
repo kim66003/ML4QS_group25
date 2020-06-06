@@ -18,29 +18,25 @@ dataset.add_numerical_dataset('accelerometer_smartwatch.csv', 'timestamps', ['x'
 dataset.add_numerical_dataset('gyroscope_phone.csv', 'timestamps', ['x','y','z'], 'avg', 'gyr_phone_', None)
 dataset.add_numerical_dataset('gyroscope_smartwatch.csv', 'timestamps', ['x','y','z'], 'avg', 'gyr_watch_', None)
 
-dataset.add_numerical_dataset('heart_rate_smartwatch.csv', 'timestamps', ['rate'], 'avg', 'hr_watch_', None)
-
 dataset.add_event_dataset('labels.csv', 'label_start', 'label_end', 'label', 'binary')
 
-dataset.add_numerical_dataset('light_phone.csv', 'timestamps', ['lux'], 'avg', 'light_phone_', None)
-
-dataset.add_numerical_dataset('magnetometer_phone.csv', 'timestamps', ['x','y','z'], 'avg', 'mag_phone_', None)
-dataset.add_numerical_dataset('magnetometer_smartwatch.csv', 'timestamps', ['x','y','z'], 'avg', 'mag_watch_', None)
-
-dataset.add_numerical_dataset('pressure_phone.csv', 'timestamps', ['pressure'], 'avg', 'press_phone_', None)
-
 dataset = dataset.data_table
+dataset_walking = dataset[dataset['labelWalking'] == 1]
+dataset_sitting = dataset[dataset['labelSitting'] == 1]
+dataset_running = dataset[dataset['labelRunning'] == 1]
 print(dataset['labelWalking'])
 # Plot the data
 DataViz = VisualizeDataset(__file__)
 
 # Boxplot
-DataViz.plot_dataset_boxplot(dataset, ['acc_phone_x','acc_phone_y','acc_phone_z','acc_watch_x','acc_watch_y','acc_watch_z'])
+DataViz.plot_dataset_boxplot(dataset_walking, ['acc_phone_x','acc_phone_y','acc_phone_z',])
+DataViz.plot_dataset_boxplot(dataset_sitting, ['acc_phone_x','acc_phone_y','acc_phone_z',])
+DataViz.plot_dataset_boxplot(dataset_running, ['acc_phone_x','acc_phone_y','acc_phone_z',])
 
-# Plot all data
-DataViz.plot_dataset(dataset, ['acc_', 'gyr_', 'hr_watch_rate', 'light_phone_lux', 'mag_', 'press_phone_', 'label'],
-                              ['like', 'like', 'like', 'like', 'like', 'like', 'like','like'],
-                              ['line', 'line', 'line', 'line', 'line', 'line', 'points', 'points'])
+# # Plot all data
+# DataViz.plot_dataset(dataset, ['acc_', 'gyr_',  'label'],
+#                               ['like', 'like', 'like', ],
+#                               ['line', 'line', 'line', ])
 
 # And print a summary of the dataset.
 util.print_statistics(dataset)
