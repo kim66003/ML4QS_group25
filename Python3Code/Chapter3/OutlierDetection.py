@@ -54,7 +54,6 @@ class DistributionBasedOutlierDetection:
     def mixture_model(self, data_table, col, n=3):
 
         print('Applying mixture models')
-        print(data_table[col])
         # Fit a mixture model to our data.
         data = data_table[data_table[col].notnull()][col]
         g = GaussianMixture(n_components=n, max_iter=100, n_init=1)
