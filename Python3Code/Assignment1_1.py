@@ -48,7 +48,7 @@ time_column_name = 'Time (s)'
 
 granularities = [60000, 1000, 250]
 
-task = '1_1'
+task = 'final_plot'
 
 if __name__ == '__main__':
        if task == '1_1':
@@ -65,8 +65,21 @@ if __name__ == '__main__':
               ax.set_xticklabels(xlabels)
               plt.ylim([-5, 5])
               plt.savefig('figures/1_1_selected/running_gyr_250.png')
+
        if task == 'final_plot':
-              dataset = pickle.load(open('datasets/dataframes/concat_df_gran_250.pkl'))
+              dataset = pickle.load(open('datasets/dataframes/concat_df_gran_250.pkl', 'rb'))
+              dataset.drop('Pressure (hPa)', axis=1)
+
+              DataViz = VisualizeDataset(__file__)
+              print(dataset.columns)
+
+              DataViz.plot_dataset(dataset, [x[0].split()[0] for x in sensors.values()],
+                                   ['like' for x in sensors.keys()],
+                                   ['line' for x in sensors.keys()],
+                                   save_path='concatenated_250')
+              
+
+
        if task != 'create_plots':
               exit(2)
 
