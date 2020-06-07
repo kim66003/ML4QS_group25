@@ -8,6 +8,7 @@
 ##############################################################
 
 import numpy as np
+from tqdm import tqdm
 
 
 # This class performs a Fourier transformation on the data to find frequencies that occur
@@ -38,7 +39,7 @@ class FourierTransformation:
 
         # Pass over the dataset (we cannot compute it when we do not have enough history)
         # and compute the values.
-        for i in range(window_size, len(data_table.index)):
+        for i in tqdm(range(window_size, len(data_table.index))):
             for col in cols:
                 real_ampl, imag_ampl = self.find_fft_transformation(data_table[col][i-window_size:min(i+1, len(data_table.index))], sampling_rate)
                 # We only look at the real part in this implementation.
