@@ -35,7 +35,7 @@ plt.legend(['$example$ $measurement$ $sequence$'], loc=3, fontsize='small')
 plt.xlabel('time')
 plt.ylabel('$X_{1}$')
 # plt.show()
-plt.savefig('figures/crowdsignals_ch4/figure_1.png')
+plt.savefig('figures/crowdsignals_ch4/example_figure_1.png')
 
 # Figure 4.2
 
@@ -58,6 +58,6 @@ ax1.plot(frequencies, values, 'b+')
 ax1.set_xlabel('Frequency (Hz)')
 ax1.set_ylabel('$a$')
 # plt.show()
-plt.savefig('figures/crowdsignals_ch4/figure_2.png')
+plt.savefig('figures/crowdsignals_ch4/example_figure_2.png')
 
 
