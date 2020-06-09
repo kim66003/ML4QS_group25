@@ -253,7 +253,7 @@ class VisualizeDataset:
             color_index += 1
 
         plt.legend(handles, labels, fontsize='xx-small', numpoints=1)
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
 
         if self.show:
             plt.show()
