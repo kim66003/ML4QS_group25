@@ -23,9 +23,11 @@ DataViz = VisualizeDataset(__file__, show=False)
 milliseconds_per_instance = (dataset.index[1] - dataset.index[0]).microseconds/1000
 
 if task == 'frequency_plot':
+
     fs = float(1000) / milliseconds_per_instance
     FreqAbs = FourierTransformation()
-    data_table = FreqAbs.abstract_frequency(copy.deepcopy(dataset), ['acc_phone_x'], int(float(10000)/milliseconds_per_instance), fs)
+    data_table = dataset[dataset['labelOnTable'] == 1]
+    data_table = FreqAbs.abstract_frequency(copy.deepcopy(data_table), ['acc_phone_x'], int(float(10000)/milliseconds_per_instance), fs)
     frequencies = []
     values = []
     for col in data_table.columns:
@@ -33,16 +35,16 @@ if task == 'frequency_plot':
         if len(val) > 0:
             frequency = float((val[0])[5:len(val) - 4])
             frequencies.append(frequency)
-            values.append(data_table.loc[data_table.index, col])
+            values.append(abs(data_table.loc[data_table.index, col])) #absolute amp
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
-    plt.xlim([0, 5])
+    plt.xlim([0, 2])
     ax1.plot(frequencies, values, 'b+')
     ax1.set_xlabel('Frequency (Hz)')
     ax1.set_ylabel('$a$')
-    plt.show()
-    plt.savefig('figures/crowdsignals_ch4/figure_2.png')
+    # plt.show()
+    plt.savefig('figures/crowdsignals_ch4/amplitude_table.png')
 
     exit()
 
