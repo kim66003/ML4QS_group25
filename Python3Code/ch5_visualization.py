@@ -303,7 +303,9 @@ axarr[1, 1].set_xlabel('$X_{1}$')
 axarr[1, 1].set_ylabel('$X_{2}$')
 axarr[1, 1].set_title('$step$ $4:$ $cluster$ $assignment$')
 
-plt.show()
+# plt.show()
+plt.savefig('figures/crowdsignals_ch5/example_figure_1.png')
+
 
 # Figure 5.7
 
@@ -331,4 +333,6 @@ ax.add_patch(Rectangle((0.6, 0.6), 0.4, 0.4,alpha=0.5, color='grey'))
 plt.xlabel('$X_{1}$')
 plt.ylabel('$X_{2}$')
 
-plt.show()
+# plt.show()
+plt.savefig('figures/crowdsignals_ch5/example_figure_2.png')
+
