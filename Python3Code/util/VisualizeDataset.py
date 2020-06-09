@@ -301,7 +301,7 @@ class VisualizeDataset:
 
         ax1.set_yticks([])  # Clear the yaxis labels / ticks
         ax1.set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
 
         if self.show:
             plt.show()
