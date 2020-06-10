@@ -29,6 +29,7 @@ RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter5_result.csv'
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
+    dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
