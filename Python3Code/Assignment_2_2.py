@@ -20,14 +20,14 @@ import pickle
 
 
 try:
-    dataset = pickle.load(open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'rb'))[1:]
+    dataset = pickle.load(open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'rb'))
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
 
 print(dataset.columns)
-DataViz = VisualizeDataset(__file__)
+DataViz = VisualizeDataset(__file__, show=False)
 
 # We'll start by applying non-hierarchical clustering.
 clusteringNH = NonHierarchicalClustering()
