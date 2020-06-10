@@ -15,8 +15,6 @@ from pathlib import Path
 import pickle
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
-# DATASET_FNAME = sys.argv[1] if len(sys.argv) > 1 else 'chapter4_result.csv'
-# RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter5_result.csv'
 
 
 try:
@@ -110,4 +108,4 @@ DataViz.plot_xy(x=[k_values], y=[silhouette_values], xlabel='k', ylabel='silhoue
 
 # And we select the outcome dataset of the knn clustering....
 
-dataset_knn.to_csv(DATA_PATH / RESULT_FNAME)
+dataset_knn.to_csv('own_dataset_clustered.csv')
