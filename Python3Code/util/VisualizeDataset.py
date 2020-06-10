@@ -43,7 +43,6 @@ class VisualizeDataset:
             else:
                 (self.figures_dir / Path(save_path)).mkdir(exist_ok=True, parents=True)
                 save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
-            print(save_path)
             plot_obj.savefig(save_path)
             print(f'Figure saved to {save_path}')
 
@@ -316,11 +315,7 @@ class VisualizeDataset:
         times = dataset.index.strftime('%H:%M:%S')
         #dendrogram(linkage,truncate_mode='lastp',p=10, show_leaf_counts=True, leaf_rotation=90.,leaf_font_size=12.,show_contracted=True, labels=times)
         dendrogram(linkage,truncate_mode='lastp',p=16, show_leaf_counts=True, leaf_rotation=45.,leaf_font_size=8.,show_contracted=True, labels=times)
-<<<<<<< HEAD
-        self.save(plt)
-=======
         self.save(plt, save_path=save_path)
->>>>>>> 158853270067b98d319b926f2ecb5525fa67e903
         plt.show()
 
     # Plot the confusion matrix that has been derived in the evaluation metrics. Classes expresses the labels
