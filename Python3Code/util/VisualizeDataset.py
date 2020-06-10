@@ -316,7 +316,7 @@ class VisualizeDataset:
         times = dataset.index.strftime('%H:%M:%S')
         #dendrogram(linkage,truncate_mode='lastp',p=10, show_leaf_counts=True, leaf_rotation=90.,leaf_font_size=12.,show_contracted=True, labels=times)
         dendrogram(linkage,truncate_mode='lastp',p=16, show_leaf_counts=True, leaf_rotation=45.,leaf_font_size=8.,show_contracted=True, labels=times)
-        self.save(plt, save_path)
+        self.save(plt)
         plt.show()
 
     # Plot the confusion matrix that has been derived in the evaluation metrics. Classes expresses the labels
