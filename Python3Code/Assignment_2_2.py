@@ -20,7 +20,7 @@ import pickle
 
 
 try:
-    dataset = pickle.load(open('datasets\dataframes\concat_df_gran_250.pkl', 'rb'))
+    dataset = pickle.load(open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'rb'))[1:]
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
