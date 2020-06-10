@@ -24,8 +24,11 @@ from pathlib import Path
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
 DATA_PATH = Path('./intermediate_datafiles/')
+print(DATA_PATH)
 DATASET_FNAME = sys.argv[1] if len(sys.argv) > 1 else 'chapter4_result.csv'
+print(DATASET_FNAME)
 RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter5_result.csv'
+print(RESULT_FNAME)
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
@@ -36,6 +39,9 @@ except IOError as e:
     raise e
 
 DataViz = VisualizeDataset(__file__)
+print(__file__)
+
+exit()
 
 # We'll start by applying non-hierarchical clustering.
 clusteringNH = NonHierarchicalClustering()
