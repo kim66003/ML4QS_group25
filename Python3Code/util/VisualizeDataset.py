@@ -308,7 +308,7 @@ class VisualizeDataset:
 
     # Plot a dendorgram for hierarchical clustering. It assumes that the linkage as
     # used in sk learn is passed as an argument as well.
-    def plot_dendrogram(self, dataset, linkage):
+    def plot_dendrogram(self, dataset, linkage, save_path=None):
         sys.setrecursionlimit(40000)
         plt.title('Hierarchical Clustering Dendrogram')
         plt.xlabel('time points')
@@ -316,7 +316,7 @@ class VisualizeDataset:
         times = dataset.index.strftime('%H:%M:%S')
         #dendrogram(linkage,truncate_mode='lastp',p=10, show_leaf_counts=True, leaf_rotation=90.,leaf_font_size=12.,show_contracted=True, labels=times)
         dendrogram(linkage,truncate_mode='lastp',p=16, show_leaf_counts=True, leaf_rotation=45.,leaf_font_size=8.,show_contracted=True, labels=times)
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
         plt.show()
 
     # Plot the confusion matrix that has been derived in the evaluation metrics. Classes expresses the labels
