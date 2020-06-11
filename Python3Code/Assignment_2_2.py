@@ -19,7 +19,7 @@ import pickle
 all_data = True if len(sys.argv) > 1 else False
 
 try:
-    dataset = pickle.load(open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'rb'))
+    dataset = pickle.load(open('datasets/dataframes/concat_df_imputed_gyro.pkl', 'rb'))
     if not all_data:
         dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
