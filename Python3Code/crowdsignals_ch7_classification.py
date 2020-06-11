@@ -35,7 +35,7 @@ EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 N_FORWARD_SELECTION = 50
 
 try:
-    dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
+    dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)[:2000]
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
@@ -43,7 +43,7 @@ except IOError as e:
 dataset.index = pd.to_datetime(dataset.index)
 
 # Let us create our visualization class again.
-DataViz = VisualizeDataset(__file__)
+DataViz = VisualizeDataset(__file__, show=False)
 
 # Let us consider our first task, namely the prediction of the label. We consider this as a non-temporal task.
 
@@ -91,9 +91,8 @@ DataViz.plot_xy(x=[range(1, N_FORWARD_SELECTION+1)], y=[ordered_scores],
 # Based on the plot we select the top 10 features (note: slightly different compared to Python 2, we use
 # those feartures here).
 
-selected_features = ['acc_phone_y_freq_0.0_Hz_ws_40', 'press_phone_pressure_temp_mean_ws_120', 'gyr_phone_x_temp_std_ws_120',
-                     'mag_watch_y_pse', 'mag_phone_z_max_freq', 'gyr_watch_y_freq_weighted', 'gyr_phone_y_freq_1.0_Hz_ws_40',
-                     'acc_phone_x_freq_1.9_Hz_ws_40', 'mag_watch_z_freq_0.9_Hz_ws_40', 'acc_watch_y_freq_0.5_Hz_ws_40']
+selected_features = ['acc_phone_x_temp_min_ws_20', 'acc_watch_y', 'pca_7', 'acc_watch_z', 'hr_watch_rate',
+                     'mag_phone_y', 'mag_watch_x', 'pca_4', 'gyr_watch_y', 'pca_5','press_phone_pressure', 'acc_phone_x_temp_max_ws_1200', 'gyr_watch_x', 'cluster', 'mag_watch_z', 'mag_phone_z', 'pca_3', 'pca_2', 'pca_1', 'acc_phone_x', 'acc_phone_x_temp_min_ws_1200', 'mag_watch_y',]
 
 # Let us first study the impact of regularization and model complexity: does regularization prevent overfitting?
 
@@ -230,9 +229,9 @@ DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'],
 # And we study two promising ones in more detail. First, let us consider the decision tree, which works best with the
 # selected features.
 
-class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.decision_tree(train_X[selected_features], train_y, test_X[selected_features],
-                                                                                           gridsearch=True,
-                                                                                           print_model_details=True, export_tree_path=EXPORT_TREE_PATH)
+class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.decision_tree(
+    train_X[selected_features], train_y, test_X[selected_features],gridsearch=True,print_model_details=True,
+    export_tree_path=EXPORT_TREE_PATH, save_path='ch7_decision_tree.pkl')
 
 class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.random_forest(
     train_X[selected_features], train_y, test_X[selected_features],
