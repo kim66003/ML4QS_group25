@@ -16,9 +16,12 @@ import pickle
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
 
+all_data = True if len(sys.argv) > 1 else False
 
 try:
     dataset = pickle.load(open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'rb'))
+    if not all_data:
+        dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')

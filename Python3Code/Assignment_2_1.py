@@ -14,13 +14,17 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
+
+all_data = True if len(sys.argv) > 1 else False
+
 DATA_PATH = Path('./intermediate_datafiles/')
 DATASET_FNAME = sys.argv[1] if len(sys.argv) > 1 else 'chapter4_result.csv'
 RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter5_result.csv'
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
-    dataset = dataset[:14780]
+    if not all_data:
+        dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
