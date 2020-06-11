@@ -21,8 +21,10 @@ all_data = True if len(sys.argv) > 1 else False
 try:
     dataset = pickle.load(open('datasets/dataframes/concat_df_imputed_gyro.pkl', 'rb'))
     if not all_data:
+        print('subset data')
         dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
+    print('all data')
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
