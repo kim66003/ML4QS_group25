@@ -35,7 +35,7 @@ EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 N_FORWARD_SELECTION = 50
 
 try:
-    dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)[:2000]
+    dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
