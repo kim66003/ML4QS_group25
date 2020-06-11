@@ -12,20 +12,30 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
+from datetime import datetime
+
+# datetime object containing current date and time
+begin = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = begin.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
 
 all_data = True if len(sys.argv) > 1 else False
 
 DATA_PATH = Path('./intermediate_datafiles/')
-DATASET_FNAME = sys.argv[1] if len(sys.argv) > 1 else 'chapter4_result.csv'
-RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter5_result.csv'
+DATASET_FNAME = 'chapter4_result.csv'
+RESULT_FNAME = 'chapter5_result.csv'
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
     if not all_data:
+        print('subset data')
         dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
+    if all_data:
+        print('all data')
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
@@ -65,6 +75,15 @@ DataViz.plot_silhouette(dataset_knn, 'cluster', 'silhouette')
 util.print_latex_statistics_clusters(dataset_knn, 'cluster', attributes_to_cluster, 'label')
 del dataset_knn['silhouette']
 
+# datetime object containing current date and time
+kmeans = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = kmeans.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = kmeans - begin
+print('difference time', diff)
+
 k_values = range(2, 10)
 silhouette_values = []
 
@@ -91,6 +110,15 @@ DataViz.plot_clusters_3d(dataset_kmed, attributes_to_cluster, 'cluster', ['label
 DataViz.plot_silhouette(dataset_kmed, 'cluster', 'silhouette')
 util.print_latex_statistics_clusters(dataset_kmed, 'cluster', attributes_to_cluster, 'label')
 
+# datetime object containing current date and time
+kmedoids = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = kmedoids.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = kmedoids - begin
+print('difference time', diff)
+
 # And the hierarchical clustering is the last one we try
 
 clusteringH = HierarchicalClustering()
@@ -114,3 +142,12 @@ DataViz.plot_xy(x=[k_values], y=[silhouette_values], xlabel='k', ylabel='silhoue
 # And we select the outcome dataset of the knn clustering....
 
 dataset_knn.to_csv(DATA_PATH / RESULT_FNAME)
+
+# datetime object containing current date and time
+end = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = end.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = end - begin
+print('difference time', diff)

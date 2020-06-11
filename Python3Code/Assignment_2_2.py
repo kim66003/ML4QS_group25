@@ -24,7 +24,8 @@ try:
         print('subset data')
         dataset = dataset[:14780]
     dataset.index = pd.to_datetime(dataset.index)
-    print('all data')
+    if all_data:
+        print('all data')
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
     raise e
