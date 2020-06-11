@@ -52,18 +52,22 @@ class PrepareDatasetForLearning:
     # training_frac of the data for training and the last 1-training_frac for testing. Otherwise, we select points randomly.
     # We return a training set, the labels of the training set, and the same for a test set. We can set the random seed
     # to make the split reproducible.
-    def split_single_dataset_classification(self, dataset, class_labels, matching, training_frac, filter=True, temporal=False, random_state=0):
+    def split_single_dataset_classification(self, dataset, class_labels, matching, training_frac, filter=True,
+                                            temporal=False, random_state=0,drop_na=True):
         # Create a single class column if we have the 'like' option.
         if matching == 'like':
             dataset = self.assign_label(dataset, class_labels)
             class_labels = self.class_col
+            print(dataset.shape)
         elif len(class_labels) == 1:
             class_labels = class_labels[0]
 
         # Filer NaN is desired and those for which we cannot determine the class should be removed.
         if filter:
-            dataset = dataset.dropna()
             dataset = dataset[dataset['class'] != self.default_label]
+
+        if drop_na:
+            dataset = dataset.dropna()
 
         # The features are the ones not in the class label.
         features = [dataset.columns.get_loc(x) for x in dataset.columns if x not in class_labels]
@@ -79,6 +83,8 @@ class PrepareDatasetForLearning:
             test_set_y = dataset.iloc[end_training_set:len(dataset.index), class_label_indices]
         # For non temporal data we use a standard function to randomly split the dataset.
         else:
+            print(dataset.iloc[:,features].shape)
+            print(dataset.iloc[:,class_label_indices].shape)
             training_set_X, test_set_X, training_set_y, test_set_y = train_test_split(dataset.iloc[:,features],
                                                                                       dataset.iloc[:,class_label_indices], test_size=(1-training_frac), stratify=dataset.iloc[:,class_label_indices], random_state=random_state)
         return training_set_X, test_set_X, training_set_y, test_set_y

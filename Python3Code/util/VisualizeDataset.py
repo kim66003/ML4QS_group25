@@ -342,7 +342,7 @@ class VisualizeDataset:
         plt.tight_layout()
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
 
         if self.show:
             plt.show()
@@ -382,7 +382,7 @@ class VisualizeDataset:
         plt.annotate('training set', xy=(train_time[int(float(len(train_time))/2)], y_coord_labels*1.02), color='blue', xycoords='data', ha='center')
         plt.annotate('', xy=(test_time[0], y_coord_labels), xycoords='data', xytext=(test_time[-1], y_coord_labels), textcoords='data', arrowprops={'arrowstyle': '<->'})
         plt.annotate('test set', xy=(test_time[int(float(len(test_time))/2)], y_coord_labels*1.02), color='red', xycoords='data', ha='center')
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
         plt.show()
 
     # Plot the Pareto front for multi objective optimization problems (for the dynamical systems stuff). We consider the
@@ -401,7 +401,7 @@ class VisualizeDataset:
         plt.xlabel('mse on ' + str(dynsys_output[0][0].columns[0]))
         plt.ylabel('mse on ' + str(dynsys_output[0][0].columns[1]))
         #plt.savefig('{0} Example ({1}).pdf'.format(ea.__class__.__name__, problem.__class__.__name__), format='pdf')
-        self.save(plt, save_path)
+        self.save(plt, save_path=save_path)
 
         if self.show:
             plt.show()
@@ -434,7 +434,8 @@ class VisualizeDataset:
         if not ylim is None:
             plt.ylim(ylim)
         self.save(plt)
-        plt.show()
+        if self.show:
+            plt.show()
 
     def plot_performances_classification(self, algs, feature_subset_names, scores_over_all_algs):
         self.plot_performances(algs, feature_subset_names, scores_over_all_algs, [0.70, 1.0], 2, 'Accuracy')

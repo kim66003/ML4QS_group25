@@ -25,6 +25,7 @@ from sklearn.model_selection import GridSearchCV
 import pandas as pd
 import numpy as np
 import os
+import pickle
 
 class ClassificationAlgorithms:
 
@@ -167,7 +168,9 @@ class ClassificationAlgorithms:
     # and use the created model to predict the outcome for both the
     # test and training set. It returns the categorical predictions for the training and test set as well as the
     # probabilities associated with each class, each class being represented as a column in the data frame.
-    def decision_tree(self, train_X, train_y, test_X, min_samples_leaf=50, criterion='gini', print_model_details=False, export_tree_path='./figures/crowdsignals_ch7_classification/', export_tree_name='tree.dot', gridsearch=True):
+    def decision_tree(self, train_X, train_y, test_X, min_samples_leaf=50, criterion='gini',
+                      print_model_details=False, export_tree_path='./figures/crowdsignals_ch7_classification/',
+                      export_tree_name='tree.dot', gridsearch=True, save_path=None):
         # Create the model
         if gridsearch:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
@@ -179,6 +182,8 @@ class ClassificationAlgorithms:
         # Fit the model
 
         dtree.fit(train_X, train_y.values.ravel())
+        if save_path:
+            pickle.dump(dtree, open(save_path, 'wb'))
 
         if gridsearch and print_model_details:
             print(dtree.best_params_)
