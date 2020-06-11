@@ -24,6 +24,13 @@ from Chapter7.FeatureSelection import FeatureSelectionClassification
 from Chapter7.FeatureSelection import FeatureSelectionRegression
 from util import util
 from util.VisualizeDataset import VisualizeDataset
+from datetime import datetime
+
+# datetime object containing current date and time
+begin = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = begin.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
 
 # Read the result from the previous chapter, and make sure the index is of the type datetime.
 DATA_PATH = Path('./intermediate_datafiles/')
@@ -32,7 +39,7 @@ RESULT_FNAME = 'chapter7_classification_result.csv'
 EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 
 # Next, we declare the parameters we'll use in the algorithms.
-N_FORWARD_SELECTION = 50
+N_FORWARD_SELECTION = 20
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
@@ -44,6 +51,15 @@ dataset.index = pd.to_datetime(dataset.index)
 
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
+
+# datetime object containing current date and time
+now1 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now1.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now1 - begin
+print('difference time', diff)
 
 # Let us consider our first task, namely the prediction of the label. We consider this as a non-temporal task.
 
@@ -58,6 +74,15 @@ train_X, test_X, train_y, test_y = prepare.split_single_dataset_classification(d
 
 print('Training set length is: ', len(train_X.index))
 print('Test set length is: ', len(test_X.index))
+
+# datetime object containing current date and time
+now2 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now2.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now2 - now1
+print('difference time', diff)
 
 # Select subsets of the features that we will consider:
 
@@ -76,6 +101,15 @@ features_after_chapter_3 = list(set().union(basic_features, pca_features))
 features_after_chapter_4 = list(set().union(basic_features, pca_features, time_features, freq_features))
 features_after_chapter_5 = list(set().union(basic_features, pca_features, time_features, freq_features, cluster_features))
 
+# datetime object containing current date and time
+now3 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now3.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now3 - now2
+print('difference time', diff)
+
 # First, let us consider the performance over a selection of features:
 
 fs = FeatureSelectionClassification()
@@ -87,6 +121,15 @@ print(ordered_features)
 
 DataViz.plot_xy(x=[range(1, N_FORWARD_SELECTION+1)], y=[ordered_scores],
                 xlabel='number of features', ylabel='accuracy')
+
+# datetime object containing current date and time
+now4 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now4.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now4 - now3
+print('difference time', diff)
 
 # Based on the plot we select the top 10 features (note: slightly different compared to Python 2, we use
 # those feartures here).
@@ -104,12 +147,13 @@ performance_training = []
 performance_test = []
 
 # We repeat the experiment a number of times to get a bit more robust data as the initialization of the NN is random.
-N_REPEATS_NN = 20
+N_REPEATS_NN = 10
 
 for reg_param in reg_parameters:
     performance_tr = 0
     performance_te = 0
     for i in range(0, N_REPEATS_NN):
+        print('iteration', i)
 
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.feedforward_neural_network(
             train_X, train_y,
@@ -126,6 +170,15 @@ DataViz.plot_xy(x=[reg_parameters, reg_parameters], y=[performance_training, per
                 xlabel='regularization parameter value', ylabel='accuracy', ylim=[0.95, 1.01],
                 names=['training', 'test'], line_styles=['r-', 'b:'])
 
+# datetime object containing current date and time
+now5 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now5.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now5 - now4
+print('difference time', diff)
+
 # Second, let us consider the influence of certain parameter settings for the tree model. (very related to the
 # regularization) and study the impact on performance.
 
@@ -134,6 +187,7 @@ performance_training = []
 performance_test = []
 
 for no_points_leaf in leaf_settings:
+    print('no points leaf', no_points_leaf)
 
     class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.decision_tree(
         train_X[selected_features], train_y, test_X[selected_features], min_samples_leaf=no_points_leaf,
@@ -146,6 +200,15 @@ DataViz.plot_xy(x=[leaf_settings, leaf_settings], y=[performance_training, perfo
                 xlabel='minimum number of points per leaf', ylabel='accuracy',
                 names=['training', 'test'], line_styles=['r-', 'b:'])
 
+# datetime object containing current date and time
+now6 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now6.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now6 - now5
+print('difference time', diff)
+
 # So yes, it is important :) Therefore we perform grid searches over the most important parameters, and do so by means
 # of cross validation upon the training set.
 
@@ -156,6 +219,7 @@ N_KCV_REPEATS = 5
 scores_over_all_algs = []
 
 for i in range(0, len(possible_feature_sets)):
+    print('possible feature sets', i)
     selected_train_X = train_X[possible_feature_sets[i]]
     selected_test_X = test_X[possible_feature_sets[i]]
 
@@ -169,6 +233,7 @@ for i in range(0, len(possible_feature_sets)):
     performance_te_svm = 0
 
     for repeat in range(0, N_KCV_REPEATS):
+        print('repeat', repeat)
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.feedforward_neural_network(
             selected_train_X, train_y, selected_test_X, gridsearch=True
         )
@@ -226,6 +291,15 @@ for i in range(0, len(possible_feature_sets)):
 
 DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
 
+# datetime object containing current date and time
+now7 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now7.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now7 - now6
+print('difference time', diff)
+
 # And we study two promising ones in more detail. First, let us consider the decision tree, which works best with the
 # selected features.
 
@@ -240,3 +314,12 @@ class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.ran
 test_cm = eval.confusion_matrix(test_y, class_test_y, class_train_prob_y.columns)
 
 DataViz.plot_confusion_matrix(test_cm, class_train_prob_y.columns, normalize=False)
+
+# datetime object containing current date and time
+now8 = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now8.strftime("%d/%m/%Y %H:%M:%S")
+print("date and time =", dt_string)
+
+diff = now8 - now7
+print('difference time', diff)
