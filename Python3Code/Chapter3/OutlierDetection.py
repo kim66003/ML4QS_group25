@@ -56,6 +56,7 @@ class DistributionBasedOutlierDetection:
         print('Applying mixture models')
         # Fit a mixture model to our data.
         data = data_table[data_table[col].notnull()][col]
+        data_table = data_table[data_table[col].notnull()]
         g = GaussianMixture(n_components=n, max_iter=100, n_init=1)
         reshaped_data = np.array(data.values.reshape(-1,1))
         g.fit(reshaped_data)
@@ -67,7 +68,6 @@ class DistributionBasedOutlierDetection:
         data_probs = pd.DataFrame(np.power(10, probs), index=data.index, columns=[col+'_mixture'])
 
         data_table = pd.concat([data_table, data_probs], axis=1)
-
         return data_table
 
 # Class for distance based outlier detection.
