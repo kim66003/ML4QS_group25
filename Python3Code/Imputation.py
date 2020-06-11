@@ -13,23 +13,27 @@ from Chapter3.ImputationMissingValues import ImputationMissingValues
 from Chapter3.KalmanFilters import KalmanFilters
 
 
-dataset = pickle.load(open('datasets\dataframes\concat_df_gran_250.pkl', 'rb'))
+dataset = pickle.load(open('datasets\dataframes\df_concat_with_labels.pkl', 'rb'))
 dataset.index = pd.to_datetime(dataset.index)
 DataViz = VisualizeDataset(__file__)
 
+attributes_to_impute = [
+"Acceleration x (m/s^2)","Acceleration y (m/s^2)","Acceleration z (m/s^2)",
+"Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)",
+"Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)",
+"Linear Acceleration x (m/s^2)","Linear Acceleration y (m/s^2)","Linear Acceleration z (m/s^2)",
+
+]
 
 milliseconds_per_instance = (dataset.index[1] - dataset.index[0]).microseconds/1000
 MisVal = ImputationMissingValues()
 KalFilter = KalmanFilters()
 print(dataset['Gyroscope x (rad/s)'].isnull().sum())
-imputed_interpolation_dataset = MisVal.impute_interpolate(copy.deepcopy(dataset), 'Gyroscope x (rad/s)')
-print(imputed_interpolation_dataset['Gyroscope x (rad/s)'].isnull().sum())
-imputed_interpolation_dataset = MisVal.impute_interpolate(copy.deepcopy(imputed_interpolation_dataset), 'Gyroscope y (rad/s)')
-imputed_interpolation_dataset = MisVal.impute_interpolate(copy.deepcopy(imputed_interpolation_dataset), 'Gyroscope z (rad/s)')
+for attribute in attributes_to_impute:
+    dataset = MisVal.impute_interpolate(copy.deepcopy(dataset), attribute)
 
-print()
 # dataset = KalFilter.apply_kalman_filter(dataset, 'Gyroscope x (rad/s)')
 # dataset = KalFilter.apply_kalman_filter(dataset, 'Gyroscope y (rad/s)')
 # dataset = KalFilter.apply_kalman_filter(dataset, 'Gyroscope z (rad/s)')
 
-pickle.dump(imputed_interpolation_dataset, open('datasets\dataframes\concat_df_imputed_gyro.pkl', 'wb'))
+pickle.dump(dataset, open('datasets\dataframes\concat_imputed.pkl', 'wb'))
