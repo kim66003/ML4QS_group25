@@ -42,13 +42,11 @@ EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 N_FORWARD_SELECTION = 18
 
 import pickle
+import random
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
 dataset = pickle.load(open('concat_clustered.pkl', 'rb'))
 dataset.index = pd.to_datetime(dataset.index)
-print(dataset.columns)
-exit()
-
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
 
@@ -68,9 +66,10 @@ print('difference time', diff)
 # cases where we do not know the label.
 
 prepare = PrepareDatasetForLearning()
-
+print('size', dataset.shape)
 train_X, test_X, train_y, test_y = prepare.split_single_dataset_classification(dataset, ['label'], 'like', 0.7,
-                                                                               filter=False, temporal=False)
+                                                                               filter=False, temporal=False,
+                                                                               drop_na=False, fill_na=True)
 
 print('Training set length is: ', len(train_X.index))
 print('Test set length is: ', len(test_X.index))
@@ -91,7 +90,8 @@ basic_features = [
     "Gyroscope y (rad/s)", "Gyroscope z (rad/s)", "Linear Acceleration x (m/s^2)","Linear Acceleration y (m/s^2)",
     "Linear Acceleration z (m/s^2)", "Latitude (°)","Longitude (°)","Height (m)","Velocity (m/s)","Direction (°)",
     "Horizontal Accuracy (m)","Vertical Accuracy (m)",  "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"]
-pca_features = ['pca_1','pca_2','pca_3','pca_4','pca_5','pca_6','pca_7']
+# pca_features = ['pca_1','pca_2','pca_3','pca_4','pca_5','pca_6','pca_7']
+pca_features = []
 time_features = [name for name in dataset.columns if '_temp_' in name]
 freq_features = [name for name in dataset.columns if (('_freq' in name) or ('_pse' in name))]
 print('#basic features: ', len(basic_features))
@@ -116,7 +116,8 @@ print('difference time', diff)
 # First, let us consider the performance over a selection of features:
 
 fs = FeatureSelectionClassification()
-
+print('X:', train_X.shape)
+print('y:', train_y.shape)
 features, ordered_features, ordered_scores = fs.forward_selection(N_FORWARD_SELECTION,
                                                                   train_X[features_after_chapter_5], train_y)
 print(ordered_scores)
@@ -133,12 +134,10 @@ print("date and time =", dt_string)
 
 diff = now4 - now3
 print('difference time', diff)
-
 # Based on the plot we select the top 10 features (note: slightly different compared to Python 2, we use
 # those feartures here).
 
-selected_features = ['acc_phone_x_temp_min_ws_20', 'acc_watch_y', 'pca_7', 'acc_watch_z', 'hr_watch_rate',
-                     'mag_phone_y', 'mag_watch_x', 'pca_4', 'gyr_watch_y', 'pca_5','press_phone_pressure', 'acc_phone_x_temp_max_ws_1200', 'gyr_watch_x', 'cluster', 'mag_watch_z', 'mag_phone_z', 'pca_3', 'pca_2', 'pca_1', 'acc_phone_x', 'acc_phone_x_temp_min_ws_1200', 'mag_watch_y',]
+selected_features = ['Magnetic field z (µT)', 'Acceleration z (m/s^2)', 'Linear Acceleration x (m/s^2)', 'Gyroscope y (rad/s)', 'Velocity (m/s)', 'Height (m)', 'Horizontal Accuracy (m)', 'Linear Acceleration z (m/s^2)', 'Latitude (°)', 'Longitude (°)', 'cluster', 'Magnetic field x (µT)', 'Linear Acceleration y (m/s^2)', 'Direction (°)', 'Vertical Accuracy (m)', 'Gyroscope z (rad/s)', 'Acceleration y (m/s^2)', 'Gyroscope x (rad/s)']
 
 # Let us first study the impact of regularization and model complexity: does regularization prevent overfitting?
 

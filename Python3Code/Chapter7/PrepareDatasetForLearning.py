@@ -53,7 +53,7 @@ class PrepareDatasetForLearning:
     # We return a training set, the labels of the training set, and the same for a test set. We can set the random seed
     # to make the split reproducible.
     def split_single_dataset_classification(self, dataset, class_labels, matching, training_frac, filter=True,
-                                            temporal=False, random_state=0,drop_na=True):
+                                            temporal=False, random_state=0,drop_na=True, fill_na=False):
         # Create a single class column if we have the 'like' option.
         if matching == 'like':
             dataset = self.assign_label(dataset, class_labels)
@@ -68,6 +68,8 @@ class PrepareDatasetForLearning:
 
         if drop_na:
             dataset = dataset.dropna()
+        if fill_na:
+            dataset = dataset.fillna(0)
 
         # The features are the ones not in the class label.
         features = [dataset.columns.get_loc(x) for x in dataset.columns if x not in class_labels]
