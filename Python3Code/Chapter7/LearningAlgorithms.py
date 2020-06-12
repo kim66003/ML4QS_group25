@@ -40,7 +40,7 @@ class ClassificationAlgorithms:
             # With the current parameters for max_iter and Python 3 packages convergence is not always reached, therefore increased +1000.
             tuned_parameters = [{'hidden_layer_sizes': [(5,), (10,), (25,), (100,), (100,5,), (100,10,),], 'activation': [activation],
                                  'learning_rate': [learning_rate], 'max_iter': [2000, 3000], 'alpha': [alpha]}]
-            nn = GridSearchCV(MLPClassifier(), tuned_parameters, cv=5, scoring='accuracy')
+            nn = GridSearchCV(MLPClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=2)
         else:
             # Create the model
             nn = MLPClassifier(hidden_layer_sizes=hidden_layer_sizes, activation=activation, max_iter=max_iter, learning_rate=learning_rate, alpha=alpha)
@@ -244,7 +244,7 @@ class ClassificationAlgorithms:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'n_estimators':[10, 50, 100],
                                  'criterion':['gini', 'entropy']}]
-            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy')
+            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=2)
         else:
             rf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion)
 
