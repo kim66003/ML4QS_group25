@@ -27,7 +27,7 @@ for key, value in dataframe_paths.items():
         activity_dataframe.index = pd.to_datetime(activity_dataframe.index) + datetime.timedelta(
             minutes=num_of_5_mins * 5)
         for activity in dataframe_paths.keys():
-            dataframe['label' + activity] = 1 if key == activity else 0
+            activity_dataframe['label' + activity] = 1 if key == activity else 0
         dataframe = dataframe.append(activity_dataframe)
     first_dataframe = False
     num_of_5_mins += 1
