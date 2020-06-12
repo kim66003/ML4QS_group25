@@ -40,7 +40,8 @@ clusteringNH = NonHierarchicalClustering()
 # Let us look at k-means first.
 k_values = range(2, 10)
 silhouette_values = []
-attributes_to_cluster = ['Gyroscope x (rad/s)','Gyroscope y (rad/s)','Gyroscope z (rad/s)']
+attributes_to_cluster = ['Acceleration x (m/s^2)','Acceleration y (m/s^2)','Acceleration z (m/s^2)',
+                         'Gyroscope x (rad/s)','Gyroscope y (rad/s)','Gyroscope z (rad/s)']
 ## Do some initial runs to determine the right number for k
 
 print('===== kmeans clustering =====')

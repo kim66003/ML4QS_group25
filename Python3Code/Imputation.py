@@ -13,7 +13,7 @@ from Chapter3.ImputationMissingValues import ImputationMissingValues
 from Chapter3.KalmanFilters import KalmanFilters
 
 
-dataset = pickle.load(open('datasets\dataframes\df_concat_with_labels.pkl', 'rb'))
+dataset = pickle.load(open('concat_outliers.pkl', 'rb'))
 dataset.index = pd.to_datetime(dataset.index)
 DataViz = VisualizeDataset(__file__)
 

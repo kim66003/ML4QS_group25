@@ -84,7 +84,7 @@ def main():
         dataset.loc[dataset[f'{col}_outlier'] == True, col] = np.nan
         del dataset[col + '_outlier']
 
-    pickle.dump(dataset, open('concat_outliers.pkl'))
+    pickle.dump(dataset, open('concat_outliers.pkl', 'wb'))
 
 if __name__ == '__main__':
     main()
