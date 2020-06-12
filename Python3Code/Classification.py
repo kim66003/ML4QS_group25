@@ -293,8 +293,6 @@ for i in range(0, len(possible_feature_sets)):
     )
     scores_over_all_algs.append(scores_with_sd)
 
-DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
-
 # datetime object containing current date and time
 now7 = datetime.now()
 # dd/mm/YY H:M:S
@@ -316,8 +314,6 @@ class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.ran
     gridsearch=True, print_model_details=True)
 
 test_cm = eval.confusion_matrix(test_y, class_test_y, class_train_prob_y.columns)
-
-DataViz.plot_confusion_matrix(test_cm, class_train_prob_y.columns, normalize=False)
 
 with open('results/scores_all_algs.txt', 'w') as f:
     for item in scores_over_all_algs:
