@@ -39,7 +39,7 @@ RESULT_FNAME = 'chapter7_classification_result.csv'
 EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 
 # Next, we declare the parameters we'll use in the algorithms.
-N_FORWARD_SELECTION = 20
+N_FORWARD_SELECTION = 18
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
@@ -147,7 +147,7 @@ performance_training = []
 performance_test = []
 
 # We repeat the experiment a number of times to get a bit more robust data as the initialization of the NN is random.
-N_REPEATS_NN = 10
+N_REPEATS_NN = 8
 
 for reg_param in reg_parameters:
     performance_tr = 0
@@ -214,7 +214,7 @@ print('difference time', diff)
 
 possible_feature_sets = [basic_features, features_after_chapter_3, features_after_chapter_4, features_after_chapter_5, selected_features]
 feature_names = ['initial set', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Selected features']
-N_KCV_REPEATS = 5
+N_KCV_REPEATS = 1
 
 scores_over_all_algs = []
 
@@ -262,19 +262,19 @@ for i in range(0, len(possible_feature_sets)):
     # overall_performance_te_svm = performance_te_svm/N_KCV_REPEATS
 
     # And we run our deterministic classifiers:
-
+    print('deterministic classifiers')
     class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.k_nearest_neighbor(
         selected_train_X, train_y, selected_test_X, gridsearch=True
     )
     performance_tr_knn = eval.accuracy(train_y, class_train_y)
     performance_te_knn = eval.accuracy(test_y, class_test_y)
-
+    print('decision tree')
     class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.decision_tree(
         selected_train_X, train_y, selected_test_X, gridsearch=True
     )
     performance_tr_dt = eval.accuracy(train_y, class_train_y)
     performance_te_dt = eval.accuracy(test_y, class_test_y)
-
+    print('naive bayes')
     class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.naive_bayes(
         selected_train_X, train_y, selected_test_X
     )
@@ -316,6 +316,10 @@ class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.ran
 test_cm = eval.confusion_matrix(test_y, class_test_y, class_train_prob_y.columns)
 
 DataViz.plot_confusion_matrix(test_cm, class_train_prob_y.columns, normalize=False)
+
+with open('results/scores_all_algs.txt', 'w') as f:
+    for item in scores_over_all_algs:
+        f.write("%s\n" % item)
 
 # datetime object containing current date and time
 now8 = datetime.now()
