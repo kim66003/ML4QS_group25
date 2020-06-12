@@ -233,32 +233,33 @@ for i in range(0, len(possible_feature_sets)):
     performance_te_svm = 0
 
     for repeat in range(0, N_KCV_REPEATS):
-        print('repeat', repeat)
+        print('\nRepeat', repeat)
+        print('Feedforward')
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.feedforward_neural_network(
             selected_train_X, train_y, selected_test_X, gridsearch=True
         )
         performance_tr_nn += eval.accuracy(train_y, class_train_y)
         performance_te_nn += eval.accuracy(test_y, class_test_y)
-
+        print('Random Forest')
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.random_forest(
             selected_train_X, train_y, selected_test_X, gridsearch=True
         )
         performance_tr_rf += eval.accuracy(train_y, class_train_y)
         performance_te_rf += eval.accuracy(test_y, class_test_y)
 
-        class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.support_vector_machine_with_kernel(
-            selected_train_X, train_y, selected_test_X, gridsearch=True
-        )
-        performance_tr_svm += eval.accuracy(train_y, class_train_y)
-        performance_te_svm += eval.accuracy(test_y, class_test_y)
+        # class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.support_vector_machine_with_kernel(
+        #     selected_train_X, train_y, selected_test_X, gridsearch=True
+        # )
+        # performance_tr_svm += eval.accuracy(train_y, class_train_y)
+        # performance_te_svm += eval.accuracy(test_y, class_test_y)
 
 
     overall_performance_tr_nn = performance_tr_nn/N_KCV_REPEATS
     overall_performance_te_nn = performance_te_nn/N_KCV_REPEATS
     overall_performance_tr_rf = performance_tr_rf/N_KCV_REPEATS
     overall_performance_te_rf = performance_te_rf/N_KCV_REPEATS
-    overall_performance_tr_svm = performance_tr_svm/N_KCV_REPEATS
-    overall_performance_te_svm = performance_te_svm/N_KCV_REPEATS
+    # overall_performance_tr_svm = performance_tr_svm/N_KCV_REPEATS
+    # overall_performance_te_svm = performance_te_svm/N_KCV_REPEATS
 
     # And we run our deterministic classifiers:
 
@@ -280,13 +281,14 @@ for i in range(0, len(possible_feature_sets)):
     performance_tr_nb = eval.accuracy(train_y, class_train_y)
     performance_te_nb = eval.accuracy(test_y, class_test_y)
 
-    scores_with_sd = util.print_table_row_performances(feature_names[i], len(selected_train_X.index), len(selected_test_X.index), [
-                                                                                                (overall_performance_tr_nn, overall_performance_te_nn),
-                                                                                                (overall_performance_tr_rf, overall_performance_te_rf),
-                                                                                                (overall_performance_tr_svm, overall_performance_te_svm),
-                                                                                                (performance_tr_knn, performance_te_knn),
-                                                                                                (performance_tr_dt, performance_te_dt),
-                                                                                                (performance_tr_nb, performance_te_nb)])
+    scores_with_sd = util.print_table_row_performances(
+        feature_names[i], len(selected_train_X.index), len(selected_test_X.index), [
+            (overall_performance_tr_nn, overall_performance_te_nn),
+            (overall_performance_tr_rf, overall_performance_te_rf),
+            (performance_tr_knn, performance_te_knn), (performance_tr_dt, performance_te_dt),
+            (performance_tr_nb, performance_te_nb)
+        ]
+    )
     scores_over_all_algs.append(scores_with_sd)
 
 DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
