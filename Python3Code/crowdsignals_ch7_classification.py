@@ -25,6 +25,7 @@ from Chapter7.FeatureSelection import FeatureSelectionRegression
 from util import util
 from util.VisualizeDataset import VisualizeDataset
 from datetime import datetime
+import shelve
 
 # datetime object containing current date and time
 begin = datetime.now()
@@ -48,7 +49,7 @@ except IOError as e:
     raise e
 
 dataset.index = pd.to_datetime(dataset.index)
-dataset = dataset.sample(n=int(0.5 * len(dataset)))
+dataset = dataset.sample(n=int(len(dataset / 2)))
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
 # datetime object containing current date and time
@@ -217,6 +218,17 @@ print(possible_feature_sets)
 print('possible feature sets', len(possible_feature_sets))
 
 scores_over_all_algs = []
+
+with shelve.open('temp/shelve.out', 'n') as f:
+    for key in dir():
+        print(key)
+        try:
+            f[key] = globals()[key]
+        except TypeError:
+            #
+            # __builtins__, my_shelf, and imported modules can not be shelved.
+            #
+            print('ERROR shelving: {0}'.format(key))
 
 for i in range(0, len(possible_feature_sets)):
     print(datetime.now())
