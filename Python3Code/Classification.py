@@ -45,7 +45,7 @@ import pickle
 import random
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
-dataset = pickle.load(open('concat_clustered.pkl', 'rb'))
+dataset = pickle.load(open('datasets/dataframes/concat_clustered.pkl', 'rb'))
 dataset.index = pd.to_datetime(dataset.index)
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
@@ -319,6 +319,8 @@ with open('results/scores_all_algs.txt', 'w') as f:
     for item in scores_over_all_algs:
         f.write("%s\n" % item)
 
+with open('results/out_data_confusion_matrix.txt', 'w') as f:
+    f.write(str(test_cm))
 # datetime object containing current date and time
 now8 = datetime.now()
 # dd/mm/YY H:M:S

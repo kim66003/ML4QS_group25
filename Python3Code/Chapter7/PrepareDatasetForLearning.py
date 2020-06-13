@@ -92,8 +92,8 @@ class PrepareDatasetForLearning:
         return training_set_X, test_set_X, training_set_y, test_set_y
 
     def split_single_dataset_regression_by_time(self, dataset, target, start_training, end_training, end_test):
-        training_instances = dataset[start_training:end_training]
-        test_instances = dataset[end_training:end_test]
+        training_instances = dataset.loc[start_training:end_training]
+        test_instances = dataset.loc[end_training:end_test]
         train_y = copy.deepcopy(training_instances[target])
         test_y = copy.deepcopy(test_instances[target])
         train_X = training_instances
