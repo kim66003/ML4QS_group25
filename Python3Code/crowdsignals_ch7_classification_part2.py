@@ -29,7 +29,10 @@ import shelve
 
 my_shelf = shelve.open('temp/shelve.out')
 for key in my_shelf:
-    globals()[key]=my_shelf[key]
+    try:
+        globals()[key]=my_shelf[key]
+    except:
+        print('Unable to load ', key)
 my_shelf.close()
 
 for i in range(0, len(possible_feature_sets)):
