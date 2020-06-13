@@ -77,7 +77,7 @@ dataset = FreqAbs.abstract_frequency(dataset, periodic_predictor_cols, int(float
 
 print('frequency all col', dataset.shape)
 for col in dataset.columns:
-    print(col, dataset[col].isna().count())
+    print(col, dataset[dataset[col].isna() == True].count())
 exit()
 # Now we only take a certain percentage of overlap in the windows, otherwise our training examples will be too much alike.
 
