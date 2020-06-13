@@ -213,7 +213,8 @@ possible_feature_sets = [basic_features, features_after_chapter_3, features_afte
 feature_names = ['initial set', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Selected features']
 N_KCV_REPEATS = 2
 
-print(len(possible_feature_sets))
+print(possible_feature_sets)
+print('possible feature sets', len(possible_feature_sets))
 
 scores_over_all_algs = []
 
