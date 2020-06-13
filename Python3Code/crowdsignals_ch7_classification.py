@@ -86,8 +86,7 @@ print('difference time', diff)
 
 # Select subsets of the features that we will consider:
 
-basic_features = ['acc_phone_x','acc_phone_y','acc_phone_z','acc_watch_x','acc_watch_y','acc_watch_z','gyr_phone_x','gyr_phone_y','gyr_phone_z','gyr_watch_x','gyr_watch_y','gyr_watch_z',
-                  'hr_watch_rate', 'light_phone_lux','mag_phone_x','mag_phone_y','mag_phone_z','mag_watch_x','mag_watch_y','mag_watch_z','press_phone_pressure']
+basic_features = ['acc_phone_x','acc_phone_y','acc_phone_z','acc_watch_x','acc_watch_y','acc_watch_z','gyr_phone_x','gyr_phone_y','gyr_phone_z']
 pca_features = ['pca_1','pca_2','pca_3','pca_4','pca_5','pca_6','pca_7']
 time_features = [name for name in dataset.columns if '_temp_' in name]
 freq_features = [name for name in dataset.columns if (('_freq' in name) or ('_pse' in name))]
@@ -134,8 +133,7 @@ print('difference time', diff)
 # Based on the plot we select the top 10 features (note: slightly different compared to Python 2, we use
 # those feartures here).
 
-selected_features = ['acc_phone_x_temp_min_ws_20', 'acc_watch_y', 'pca_7', 'acc_watch_z', 'hr_watch_rate',
-                     'mag_phone_y', 'mag_watch_x', 'pca_4', 'gyr_watch_y', 'pca_5','press_phone_pressure', 'acc_phone_x_temp_max_ws_1200', 'gyr_watch_x', 'cluster', 'mag_watch_z', 'mag_phone_z', 'pca_3', 'pca_2', 'pca_1', 'acc_phone_x', 'acc_phone_x_temp_min_ws_1200', 'mag_watch_y',]
+selected_features = ['acc_phone_x_temp_max_ws_20', 'acc_phone_x_temp_min_ws_120', 'hr_watch_rate', 'acc_phone_x_temp_min_ws_1200', 'pca_5', 'acc_phone_x_temp_max_ws_1200']
 
 # Let us first study the impact of regularization and model complexity: does regularization prevent overfitting?
 
@@ -323,6 +321,8 @@ with open('results/scores_all_algs.txt', 'w') as f:
     for item in scores_over_all_algs:
         f.write("%s\n" % item)
 
+with open('results/crowdsignal_cm.txt', 'w') as f:
+    f.write(str(test_cm))
 # datetime object containing current date and time
 now8 = datetime.now()
 # dd/mm/YY H:M:S
