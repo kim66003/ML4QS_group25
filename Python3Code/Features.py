@@ -34,28 +34,29 @@ milliseconds_per_instance = (dataset.index[1] - dataset.index[0]).microseconds/1
 
 
 # Chapter 4: Identifying aggregate attributes.
-# print('attributes time domain')
-#
-# # First we focus on the time domain.
-#
-# # Set the window sizes to the number of instances representing 5 seconds, 30 seconds and 5 minutes
-# window_sizes = [int(float(5000)/milliseconds_per_instance), int(float(0.5*60000)/milliseconds_per_instance), int(float(5*60000)/milliseconds_per_instance)]
-#
-# print('total window sizes', window_sizes)
-#
-# NumAbs = NumericalAbstraction()
-# dataset_copy = copy.deepcopy(dataset)
-# for ws in window_sizes:
-#     dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'mean')
-#     dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'std')
-#     print('window size', ws)
-#
-# ws = int(float(0.5*60000)/milliseconds_per_instance)
-# selected_predictor_cols = [c for c in dataset.columns if not 'label' in c]
-# dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'mean')
-# dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'std')
+print('attributes time domain')
+
+# First we focus on the time domain.
+
+# Set the window sizes to the number of instances representing 5 seconds, 30 seconds and 5 minutes
+window_sizes = [int(float(5000)/milliseconds_per_instance), int(float(0.5*60000)/milliseconds_per_instance), int(float(5*60000)/milliseconds_per_instance)]
+
+print('total window sizes', window_sizes)
+
+NumAbs = NumericalAbstraction()
+dataset_copy = copy.deepcopy(dataset)
+for ws in window_sizes:
+    dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'mean')
+    dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'std')
+    print('window size', ws)
+
+ws = int(float(0.5*60000)/milliseconds_per_instance)
+selected_predictor_cols = [c for c in dataset.columns if not 'label' in c]
+dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'mean')
+dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'std')
 
 
+print('temporal', dataset.shape)
 
 print('attributes frequency domain')
 
@@ -63,18 +64,21 @@ print('attributes frequency domain')
 
 FreqAbs = FourierTransformation()
 fs = float(1000)/milliseconds_per_instance
-print(dataset.shape)
 periodic_predictor_cols = ['Acceleration x (m/s^2)', 'Acceleration y (m/s^2)', 'Acceleration z (m/s^2)', "Gyroscope x (rad/s)",
     "Gyroscope y (rad/s)", "Gyroscope z (rad/s)", "Linear Acceleration x (m/s^2)","Linear Acceleration y (m/s^2)",
     "Linear Acceleration z (m/s^2)", "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"]
 data_table = FreqAbs.abstract_frequency(copy.deepcopy(dataset), ['Acceleration x (m/s^2)'], int(float(10000)/milliseconds_per_instance), fs)
-print('spectral analysis')
+
+print('frequency', dataset.shape)
 # Spectral analysis.
 print(data_table.shape)
-exit()
 
 dataset = FreqAbs.abstract_frequency(dataset, periodic_predictor_cols, int(float(10000)/milliseconds_per_instance), fs)
 
+print('frequency all col', dataset.shape)
+for col in dataset.columns:
+    print(col, dataset[col].isna().count())
+exit()
 # Now we only take a certain percentage of overlap in the windows, otherwise our training examples will be too much alike.
 
 # The percentage of overlap we allow
