@@ -49,7 +49,7 @@ except IOError as e:
     raise e
 
 dataset.index = pd.to_datetime(dataset.index)
-dataset = dataset.sample(n=int(len(dataset / 2)))
+dataset = dataset.sample(n=8000)
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
 # datetime object containing current date and time
