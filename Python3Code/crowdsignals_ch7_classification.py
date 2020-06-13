@@ -219,6 +219,7 @@ print('possible feature sets', len(possible_feature_sets))
 scores_over_all_algs = []
 
 for i in range(0, len(possible_feature_sets)):
+    print(datetime.now())
     print('possible feature sets', i)
     selected_train_X = train_X[possible_feature_sets[i]]
     selected_test_X = test_X[possible_feature_sets[i]]
@@ -233,6 +234,7 @@ for i in range(0, len(possible_feature_sets)):
     performance_te_svm = 0
 
     for repeat in range(0, N_KCV_REPEATS):
+        print(datetime.now())
         print('\nRepeat', repeat)
         print('Feedforward')
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.feedforward_neural_network(
@@ -252,6 +254,7 @@ for i in range(0, len(possible_feature_sets)):
         # )
         # performance_tr_svm += eval.accuracy(train_y, class_train_y)
         # performance_te_svm += eval.accuracy(test_y, class_test_y)
+        print(datetime.now())
 
 
     overall_performance_tr_nn = performance_tr_nn/N_KCV_REPEATS
@@ -290,6 +293,7 @@ for i in range(0, len(possible_feature_sets)):
         ]
     )
     scores_over_all_algs.append(scores_with_sd)
+    print(datetime.now())
 
 DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
 
