@@ -48,10 +48,9 @@ except IOError as e:
     raise e
 
 dataset.index = pd.to_datetime(dataset.index)
-
+dataset = dataset.sample(n=int(0.5 * len(dataset)))
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
-
 # datetime object containing current date and time
 now1 = datetime.now()
 # dd/mm/YY H:M:S
