@@ -1,0 +1,29 @@
+===== kmeans clustering =====
+k = 2
+silhouette = 0.8000750079834347
+k = 3
+silhouette = 0.6238393492346489
+k = 4
+silhouette = 0.585161460386383
+k = 5
+silhouette = 0.47816236596786177
+k = 6
+silhouette = 0.5293805853149545
+k = 7
+silhouette = 0.5353534622902847
+k = 8
+silhouette = 0.5720251526175815
+k = 9
+silhouette = 0.5703634477855032
+Highest K-Means silhouette score: k = 2
+\multirow{2}{*}{ Acceleration x (m/s^2) } & mean  &  0.64 &  -0.67\\
+ & std  &  1.96 &  2.81\\
+\multirow{2}{*}{ Acceleration y (m/s^2) } & mean  &  2.19 &  -8.90\\
+ & std  &  1.90 &  0.99\\
+\multirow{2}{*}{ Acceleration z (m/s^2) } & mean  &  9.12 &  -3.31\\
+ & std  &  1.09 &  0.90\\
+labelNo_activity  & percentage  &  100.00 \% &  0.00 \%\\
+labelCycling  & percentage  &  3.17 \% &  96.83 \%\\
+labelRunning  & percentage  &  100.00 \% &  0.00 \%\\
+labelSitting  & percentage  &  100.00 \% &  0.00 \%\\
+labelWalking  & percentage  &  100.00 \% &  0.00 \%\\
