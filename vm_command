@@ -1,0 +1,1 @@
+gcloud beta compute ssh --zone "us-east1-c" "ml4qs-instance-3" --project "ml4qs-279914" --ssh-flag="-vvv"
