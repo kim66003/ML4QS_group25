@@ -78,13 +78,13 @@ dataset = FreqAbs.abstract_frequency(dataset, periodic_predictor_cols, int(float
 print('frequency all col', dataset.shape)
 for col in dataset.columns:
     print(col, dataset[dataset[col].isna() == True].count())
-exit()
 # Now we only take a certain percentage of overlap in the windows, otherwise our training examples will be too much alike.
 
+pickle.dump(dataset, open('concat_no_skipping.pkl', 'wb'))
 # The percentage of overlap we allow
 window_overlap = 0.9
 skip_points = int((1-window_overlap) * ws)
 dataset = dataset.iloc[::skip_points,:]
 
-
-pickle.dump(dataset, open('concat_frequency.pkl', 'wb'))
+pickle.dump(dataset, open('concat_with_skipping.pkl', 'wb'))
+print(data_table.shape)
