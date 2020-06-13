@@ -96,7 +96,7 @@ eval = RegressionEvaluation()
 
 # We repeat the experiment a number of times to get a bit more robust data as the initialization of e.g. the NN is random.
 
-repeats = 10
+repeats = 1
 
 # we set a washout time to give the NN's the time to stabilize. We do not compute the error during the washout time.
 
