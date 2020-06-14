@@ -112,7 +112,19 @@ for i in range(0, len(possible_feature_sets)):
     scores_over_all_algs.append(scores_with_sd)
     print(datetime.now())
 
-DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
+
+with shelve.open('temp/ch7_part2.out', 'n') as f:
+    for key in dir():
+        print(key)
+        try:
+            f[key] = globals()[key]
+        except TypeError:
+            #
+            # __builtins__, my_shelf, and imported modules can not be shelved.
+            #
+            print('ERROR shelving: {0}'.format(key))
+
+DataViz.plot_performances_classification(['NN', 'RF', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
 
 # datetime object containing current date and time
 now7 = datetime.now()
