@@ -45,7 +45,7 @@ import pickle
 import random
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
-dataset = pickle.load(open('datasets/dataframes/concat_clustered.pkl', 'rb'))
+dataset = pickle.load(open('concat_with_skipping.pkl', 'rb'))
 dataset.index = pd.to_datetime(dataset.index)
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
