@@ -213,8 +213,8 @@ print('difference time', diff)
 # So yes, it is important :) Therefore we perform grid searches over the most important parameters, and do so by means
 # of cross validation upon the training set.
 
-possible_feature_sets = [basic_features, features_after_chapter_3, features_after_chapter_4, features_after_chapter_5, selected_features]
-feature_names = ['initial set', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Selected features']
+possible_feature_sets = [basic_features, features_after_chapter_4, features_after_chapter_5, selected_features]
+feature_names = ['initial set','Chapter 4', 'Chapter 5', 'Selected features']
 N_KCV_REPEATS = 1
 
 scores_over_all_algs = []
@@ -292,6 +292,7 @@ for i in range(0, len(possible_feature_sets)):
     )
     scores_over_all_algs.append(scores_with_sd)
 
+DataViz.plot_performances_classification(['NN', 'RF', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
 # datetime object containing current date and time
 now7 = datetime.now()
 # dd/mm/YY H:M:S

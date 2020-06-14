@@ -418,7 +418,7 @@ class VisualizeDataset:
     # Visualizes the performance of different algorithms over different feature sets. Assumes the scores to contain
     # a score on the training set followed by an sd, and the same for the test set.
     def plot_performances(self, algs, feature_subset_names, scores_over_all_algs, ylim, std_mult, y_name):
-
+        plt.clf()
         width = float(1)/(len(feature_subset_names)+1)
         ind = np.arange(len(algs))
         for i in range(0, len(feature_subset_names)):
