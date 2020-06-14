@@ -112,7 +112,6 @@ for i in range(0, len(possible_feature_sets)):
     scores_over_all_algs.append(scores_with_sd)
     print(datetime.now())
 
-
 with shelve.open('temp/ch7_part2.out', 'n') as f:
     for key in dir():
         print(key)
