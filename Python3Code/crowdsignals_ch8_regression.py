@@ -31,7 +31,7 @@ RESULT_FNAME = sys.argv[2] if len(sys.argv) > 2 else 'chapter3_result_outliers.c
 
 # Next, import the data from the specified location and parse the date index.
 try:
-    dataset = pd.read_csv(Path(DATA_PATH / DATASET_FNAME), index_col=0)
+    dataset = pd.read_csv(Path(DATA_PATH / DATASET_FNAME), index_col=0).sample(n=500)
     dataset.index = pd.to_datetime(dataset.index)
 except IOError as e:
     print('File not found, try to run previous crowdsignals scripts first!')
@@ -93,8 +93,10 @@ features_after_chapter_5 = list(set().union(basic_features, pca_features, time_f
 selected_features = ['temp_pattern_labelOnTable','labelOnTable', 'temp_pattern_labelOnTable(b)labelOnTable', 'cluster',
                      'pca_1_temp_mean_ws_120','pca_2_temp_mean_ws_120','pca_2','acc_watch_y_temp_mean_ws_120','gyr_watch_y_pse',
                      'gyr_watch_x_pse']
-possible_feature_sets = [basic_features, features_after_chapter_3, features_after_chapter_4, features_after_chapter_5, selected_features]
-feature_names = ['initial set', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Selected features']
+# possible_feature_sets = [basic_features, features_after_chapter_3, features_after_chapter_4, features_after_chapter_5, selected_features]
+possible_feature_sets = [basic_features]
+# feature_names = ['initial set', 'Chapter 3', 'Chapter 4', 'Chapter 5', 'Selected features']
+feature_names = ['initial set']
 
 # Let us first study whether the time series is stationary and what the autocorrelations are.
 
@@ -111,7 +113,7 @@ eval = RegressionEvaluation()
 
 # We repeat the experiment a number of times to get a bit more robust data as the initialization of e.g. the NN is random.
 
-repeats = 10
+repeats = 1
 
 # we set a washout time to give the NN's the time to stabilize. We do not compute the error during the washout time.
 
@@ -119,7 +121,8 @@ washout_time = 10
 
 scores_over_all_algs = []
 
-for i in range(0, len(possible_feature_sets)):
+# for i in range(0, len(possible_feature_sets)):
+for i in range(0, 1):
 
     print(f'Evaluating for features {possible_feature_sets[i]}')
     selected_train_X = train_X[possible_feature_sets[i]]
@@ -138,17 +141,21 @@ for i in range(0, len(possible_feature_sets)):
 
     for repeat in range(0, repeats):
         print(f'---- run {repeat} ---')
-        regr_train_y, regr_test_y = learner.reservoir_computing(selected_train_X, train_y, selected_test_X, test_y, gridsearch=True, per_time_step=False)
+        print('RC')
+        regr_train_y, regr_test_y = learner.reservoir_computing(selected_train_X, train_y, selected_test_X, test_y,
+                                                                gridsearch=False, per_time_step=False,)
 
         mean_tr, std_tr = eval.mean_squared_error_with_std(train_y.iloc[washout_time:,], regr_train_y.iloc[washout_time:,])
         mean_te, std_te = eval.mean_squared_error_with_std(test_y.iloc[washout_time:,], regr_test_y.iloc[washout_time:,])
 
+        print('RNN')
         performance_tr_res += mean_tr
         performance_tr_res_std += std_tr
         performance_te_res += mean_te
         performance_te_res_std += std_te
 
-        regr_train_y, regr_test_y = learner.recurrent_neural_network(selected_train_X, train_y, selected_test_X, test_y, gridsearch=True)
+        regr_train_y, regr_test_y = learner.recurrent_neural_network(selected_train_X, train_y, selected_test_X,
+                                                                     test_y, gridsearch=False, iterations=3)
 
         mean_tr, std_tr = eval.mean_squared_error_with_std(train_y.iloc[washout_time:,], regr_train_y.iloc[washout_time:,])
         mean_te, std_te = eval.mean_squared_error_with_std(test_y.iloc[washout_time:,], regr_test_y.iloc[washout_time:,])
@@ -190,7 +197,7 @@ for i in range(0, len(possible_feature_sets)):
                       (overall_performance_tr_ts, overall_performance_tr_ts_std, overall_performance_te_ts, overall_performance_te_ts_std)]
     util.print_table_row_performances_regression(feature_names[i], len(selected_train_X.index), len(selected_test_X.index), scores_with_sd)
     scores_over_all_algs.append(scores_with_sd)
-
+print(scores_over_all_algs)
 DataViz.plot_performances_regression(['Reservoir', 'RNN', 'Time series'], feature_names, scores_over_all_algs)
 
 regr_train_y, regr_test_y = learner.reservoir_computing(train_X[features_after_chapter_5], train_y, test_X[features_after_chapter_5], test_y, gridsearch=False)
@@ -202,6 +209,8 @@ DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train
 
 # And now some example code for using the dynamical systems model with parameter tuning (note: focus on predicting accelerometer data):
 
+print(dataset.columns)
+exit()
 train_X, test_X, train_y, test_y = prepare.split_single_dataset_regression(copy.deepcopy(dataset), ['acc_phone_x', 'acc_phone_y'], 0.9, filter=False, temporal=True)
 
 output_sets = learner.dynamical_systems_model_nsga_2(train_X, train_y, test_X, test_y, ['self.acc_phone_x', 'self.acc_phone_y', 'self.acc_phone_z'],
