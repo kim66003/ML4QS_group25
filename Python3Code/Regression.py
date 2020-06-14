@@ -149,17 +149,7 @@ for i in range(0, len(possible_feature_sets)):
 
 
     # We only apply the time series in case of the basis features.
-    if (feature_names[i] == 'initial set'):
-        regr_train_y, regr_test_y = learner.time_series(selected_train_X, train_y, selected_test_X, test_y, gridsearch=True)
 
-        mean_tr, std_tr = eval.mean_squared_error_with_std(train_y.iloc[washout_time:,], regr_train_y.iloc[washout_time:,])
-        mean_te, std_te = eval.mean_squared_error_with_std(test_y.iloc[washout_time:,], regr_test_y.iloc[washout_time:,])
-
-        overall_performance_tr_ts = mean_tr
-        overall_performance_tr_ts_std = std_tr
-        overall_performance_te_ts = mean_te
-        overall_performance_te_ts_std = std_te
-    else:
         overall_performance_tr_ts = 0
         overall_performance_tr_ts_std = 0
         overall_performance_te_ts = 0
@@ -176,7 +166,7 @@ for i in range(0, len(possible_feature_sets)):
 
     scores_with_sd = [(overall_performance_tr_res, overall_performance_tr_res_std, overall_performance_te_res, overall_performance_te_res_std),
                       (overall_performance_tr_rnn, overall_performance_tr_rnn_std, overall_performance_te_rnn, overall_performance_te_rnn_std),
-                      (overall_performance_tr_ts, overall_performance_tr_ts_std, overall_performance_te_ts, overall_performance_te_ts_std)]
+                      ]
     util.print_table_row_performances_regression(feature_names[i], len(selected_train_X.index), len(selected_test_X.index), scores_with_sd)
     scores_over_all_algs.append(scores_with_sd)
 
@@ -191,7 +181,7 @@ with shelve.open('temp/regression.out', 'n') as f:
             #
             print('ERROR shelving: {0}'.format(key))
 
-DataViz.plot_performances_regression(['Reservoir', 'RNN', 'Time series'], feature_names, scores_over_all_algs)
+DataViz.plot_performances_regression(['Reservoir', 'RNN', ], feature_names, scores_over_all_algs)
 
 regr_train_y, regr_test_y = learner.reservoir_computing(train_X[features_after_chapter_5], train_y, test_X[features_after_chapter_5], test_y, gridsearch=False)
 DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y["gyr_z"],

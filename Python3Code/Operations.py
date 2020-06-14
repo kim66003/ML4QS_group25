@@ -31,9 +31,10 @@ def rename(dataset):
     return dataset
 
 if __name__ == '__main__':
-    dataset = pickle.load(open('concat_no_skipping.pkl', 'rb'))
-    # dataset.index = pd.to_datetime(dataset.index)
+    # dataset = pickle.load(open('concat_no_skipping.pkl', 'rb'))
+    # # dataset.index = pd.to_datetime(dataset.index)
+    # # print(dataset.columns)
+    # # print(dataset.shape)
+    # dataset = rename(dataset)
     # print(dataset.columns)
-    # print(dataset.shape)
-    dataset = rename(dataset)
-    print(dataset.columns)
+    print((0.9695121951219512 + 0))

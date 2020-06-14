@@ -19,15 +19,18 @@ import pickle
 import shelve
 from Operations import *
 
+
 my_shelf = shelve.open('temp/regression.out')
 for key in my_shelf:
+    print(key)
     try:
         globals()[key]=my_shelf[key]
     except:
         print('Unable to load ', key)
 my_shelf.close()
 
-
+print(scores_over_all_algs)
+exit()
 train_X, test_X, train_y, test_y = prepare.split_single_dataset_regression(copy.deepcopy(dataset), ['acc_phone_x', 'acc_phone_y'], 0.9, filter=False, temporal=True)
 
 output_sets = learner.dynamical_systems_model_nsga_2(train_X, train_y, test_X, test_y, ['self.acc_phone_x', 'self.acc_phone_y', 'self.acc_phone_z'],
@@ -40,8 +43,8 @@ DataViz.plot_pareto_front(output_sets)
 DataViz.plot_numerical_prediction_versus_real_dynsys_mo(train_X.index, train_y, test_X.index, test_y, output_sets, 0, 'acc_phone_x')
 
 regr_train_y, regr_test_y = learner.dynamical_systems_model_ga(train_X, train_y, test_X, test_y, ['self.acc_phone_x', 'self.acc_phone_y', 'self.acc_phone_z'],
-                                                     ['self.a * self.acc_phone_x + self.b * self.acc_phone_y', 'self.c * self.acc_phone_y + self.d * self.acc_phone_z', 'self.e * self.acc_phone_x + self.f * self.acc_phone_z'],
-                                                     ['self.acc_phone_x', 'self.acc_phone_y'],
+                                                     ['self.a * self.acc_x + self.b * self.acc_y', 'self.c * self.acc_y + self.d * self.acc_z', 'self.e * self._x + self.f * self._z'],
+                                                     ['self.gyr_z'],
                                                      ['self.a', 'self.b', 'self.c', 'self.d', 'self.e', 'self.f'],
                                                      pop_size=5, max_generations=10, per_time_step=True)
 
