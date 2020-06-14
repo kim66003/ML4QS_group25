@@ -40,7 +40,7 @@ class ClassificationAlgorithms:
             # With the current parameters for max_iter and Python 3 packages convergence is not always reached, therefore increased +1000.
             tuned_parameters = [{'hidden_layer_sizes': [(5,), (10,), (25,), (100,), (100,5,), (100,10,),], 'activation': [activation],
                                  'learning_rate': [learning_rate], 'max_iter': [2000, 3000], 'alpha': [alpha]}]
-            nn = GridSearchCV(MLPClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1)
+            nn = GridSearchCV(MLPClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1, n_jobs=-1)
         else:
             # Create the model
             nn = MLPClassifier(hidden_layer_sizes=hidden_layer_sizes, activation=activation, max_iter=max_iter, learning_rate=learning_rate, alpha=alpha)
@@ -73,7 +73,7 @@ class ClassificationAlgorithms:
         if gridsearch:
             tuned_parameters = [{'kernel': ['rbf', 'poly'], 'gamma': [1e-3, 1e-4],
                          'C': [1, 10, 100]}]
-            svm = GridSearchCV(SVC(probability=True), tuned_parameters, cv=5, scoring='accuracy')
+            svm = GridSearchCV(SVC(probability=True), tuned_parameters, cv=5, scoring='accuracy', n_jobs=-1)
         else:
             svm = SVC(C=C, kernel=kernel, gamma=gamma, probability=True, cache_size=7000)
 
@@ -140,7 +140,7 @@ class ClassificationAlgorithms:
         # Create the model
         if gridsearch:
             tuned_parameters = [{'n_neighbors': [1, 2, 5, 10]}]
-            knn = GridSearchCV(KNeighborsClassifier(), tuned_parameters, cv=5, scoring='accuracy')
+            knn = GridSearchCV(KNeighborsClassifier(), tuned_parameters, cv=5, scoring='accuracy', n_jobs=-1)
         else:
             knn = KNeighborsClassifier(n_neighbors=n_neighbors)
 
@@ -175,7 +175,7 @@ class ClassificationAlgorithms:
         if gridsearch:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'criterion':['gini', 'entropy']}]
-            dtree = GridSearchCV(DecisionTreeClassifier(), tuned_parameters, cv=5, scoring='accuracy')
+            dtree = GridSearchCV(DecisionTreeClassifier(), tuned_parameters, cv=5, scoring='accuracy', n_jobs=-1)
         else:
             dtree = DecisionTreeClassifier(min_samples_leaf=min_samples_leaf, criterion=criterion)
 
@@ -244,9 +244,9 @@ class ClassificationAlgorithms:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'n_estimators':[10, 50, 100],
                                  'criterion':['gini', 'entropy']}]
-            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1)
+            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1, n_jobs=-1)
         else:
-            rf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion)
+            rf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion, n_jobs=-1)
 
         # Fit the model
 
@@ -285,7 +285,7 @@ class RegressionAlgorithms:
             # With the current parameters for max_iter and Python 3 packages convergence is not always reached, therefore increased +1000.
             tuned_parameters = [{'hidden_layer_sizes': [(5,), (10,), (25,), (100,), (100,5,), (100,10,),], 'activation': ['identity'],
                                  'learning_rate': ['adaptive'], 'max_iter': [4000, 10000]}]
-            nn = GridSearchCV(MLPRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error')
+            nn = GridSearchCV(MLPRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         else:
             # Create the model
             nn = MLPRegressor(hidden_layer_sizes=hidden_layer_sizes, activation=activation, max_iter=max_iter, learning_rate=learning_rate)
@@ -367,10 +367,10 @@ class RegressionAlgorithms:
         # Create the model
         if gridsearch:
             tuned_parameters = [{'n_neighbors': [1, 2, 5, 10]}]
-            knn = GridSearchCV(KNeighborsRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error')
+            knn = GridSearchCV(KNeighborsRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         else:
             # Create the model
-            knn = KNeighborsRegressor(n_neighbors=n_neighbors)
+            knn = KNeighborsRegressor(n_neighbors=n_neighbors, n_jobs=-1)
 
         # Fit the model
         knn.fit(train_X, train_y)
@@ -396,7 +396,7 @@ class RegressionAlgorithms:
         if gridsearch:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'criterion':['mse']}]
-            dtree = GridSearchCV(DecisionTreeRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error')
+            dtree = GridSearchCV(DecisionTreeRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         else:
             # Create the model
             dtree = DecisionTreeRegressor(min_samples_leaf=min_samples_leaf, criterion=criterion)
@@ -437,10 +437,10 @@ class RegressionAlgorithms:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'n_estimators':[10, 50, 100],
                                  'criterion':['mse']}]
-            rf = GridSearchCV(RandomForestRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error')
+            rf = GridSearchCV(RandomForestRegressor(), tuned_parameters, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         else:
             # Create the model
-            rf = RandomForestRegressor(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion)
+            rf = RandomForestRegressor(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion, n_jobs=-1)
 
         # Fit the model
         rf.fit(train_X, train_y)
@@ -465,3 +465,4 @@ class RegressionAlgorithms:
                 print(rf.feature_importances_[ordered_indices[i]])
 
         return pred_training_y, pred_test_y
+
