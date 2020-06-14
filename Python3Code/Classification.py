@@ -88,8 +88,7 @@ print('difference time', diff)
 basic_features = [
     'Acceleration x (m/s^2)', 'Acceleration y (m/s^2)', 'Acceleration z (m/s^2)', "Gyroscope x (rad/s)",
     "Gyroscope y (rad/s)", "Gyroscope z (rad/s)", "Linear Acceleration x (m/s^2)","Linear Acceleration y (m/s^2)",
-    "Linear Acceleration z (m/s^2)", "Latitude (°)","Longitude (°)","Height (m)","Velocity (m/s)","Direction (°)",
-    "Horizontal Accuracy (m)","Vertical Accuracy (m)",  "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"]
+    "Linear Acceleration z (m/s^2)", "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"]
 # pca_features = ['pca_1','pca_2','pca_3','pca_4','pca_5','pca_6','pca_7']
 pca_features = []
 time_features = [name for name in dataset.columns if '_temp_' in name]
@@ -137,7 +136,7 @@ print('difference time', diff)
 # Based on the plot we select the top 10 features (note: slightly different compared to Python 2, we use
 # those feartures here).
 
-selected_features = ['Magnetic field z (µT)', 'Acceleration z (m/s^2)', 'Linear Acceleration x (m/s^2)', 'Gyroscope y (rad/s)', 'Velocity (m/s)', 'Height (m)', 'Horizontal Accuracy (m)', 'Linear Acceleration z (m/s^2)', 'Latitude (°)', 'Longitude (°)', 'cluster', 'Magnetic field x (µT)', 'Linear Acceleration y (m/s^2)', 'Direction (°)', 'Vertical Accuracy (m)', 'Gyroscope z (rad/s)', 'Acceleration y (m/s^2)', 'Gyroscope x (rad/s)']
+selected_features = ['Magnetic field z (µT)', 'Acceleration z (m/s^2)', 'Linear Acceleration x (m/s^2)', 'Gyroscope y (rad/s)', 'Velocity (m/s)', 'Height (m)', 'Horizontal Accuracy (m)', 'Linear Acceleration z (m/s^2)', 'cluster', 'Magnetic field x (µT)', 'Linear Acceleration y (m/s^2)', 'Direction (°)', 'Vertical Accuracy (m)', 'Gyroscope z (rad/s)', 'Acceleration y (m/s^2)', 'Gyroscope x (rad/s)']
 
 # Let us first study the impact of regularization and model complexity: does regularization prevent overfitting?
 

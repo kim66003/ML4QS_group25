@@ -40,7 +40,7 @@ RESULT_FNAME = 'chapter7_classification_result.csv'
 EXPORT_TREE_PATH = Path('./figures/crowdsignals_ch7_classification/')
 
 # Next, we declare the parameters we'll use in the algorithms.
-N_FORWARD_SELECTION = 18
+N_FORWARD_SELECTION = 15
 
 try:
     dataset = pd.read_csv(DATA_PATH / DATASET_FNAME, index_col=0)
@@ -49,7 +49,7 @@ except IOError as e:
     raise e
 
 dataset.index = pd.to_datetime(dataset.index)
-dataset = dataset.sample(n=int(len(dataset / 2)))
+dataset = dataset.sample(n=8000)
 # Let us create our visualization class again.
 DataViz = VisualizeDataset(__file__, show=False)
 # datetime object containing current date and time
@@ -307,7 +307,7 @@ for i in range(0, len(possible_feature_sets)):
     scores_over_all_algs.append(scores_with_sd)
     print(datetime.now())
 
-DataViz.plot_performances_classification(['NN', 'RF', 'SVM', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
+DataViz.plot_performances_classification(['NN', 'RF', 'KNN', 'DT', 'NB'], feature_names, scores_over_all_algs)
 
 # datetime object containing current date and time
 now7 = datetime.now()

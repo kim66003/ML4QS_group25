@@ -56,6 +56,7 @@ dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'mean'
 dataset = NumAbs.abstract_numerical(dataset, selected_predictor_cols, ws, 'std')
 
 
+print('temporal', dataset.shape)
 
 print('attributes frequency domain')
 
@@ -63,23 +64,27 @@ print('attributes frequency domain')
 
 FreqAbs = FourierTransformation()
 fs = float(1000)/milliseconds_per_instance
-
 periodic_predictor_cols = ['Acceleration x (m/s^2)', 'Acceleration y (m/s^2)', 'Acceleration z (m/s^2)', "Gyroscope x (rad/s)",
     "Gyroscope y (rad/s)", "Gyroscope z (rad/s)", "Linear Acceleration x (m/s^2)","Linear Acceleration y (m/s^2)",
     "Linear Acceleration z (m/s^2)", "Magnetic field x (µT)","Magnetic field y (µT)","Magnetic field z (µT)"]
 data_table = FreqAbs.abstract_frequency(copy.deepcopy(dataset), ['Acceleration x (m/s^2)'], int(float(10000)/milliseconds_per_instance), fs)
-print('spectral analysis')
-# Spectral analysis.
 
+print('frequency', dataset.shape)
+# Spectral analysis.
+print(data_table.shape)
 
 dataset = FreqAbs.abstract_frequency(dataset, periodic_predictor_cols, int(float(10000)/milliseconds_per_instance), fs)
 
+print('frequency all col', dataset.shape)
+for col in dataset.columns:
+    print(col, dataset[dataset[col].isna() == True].count())
 # Now we only take a certain percentage of overlap in the windows, otherwise our training examples will be too much alike.
 
+pickle.dump(dataset, open('concat_no_skipping.pkl', 'wb'))
 # The percentage of overlap we allow
 window_overlap = 0.9
 skip_points = int((1-window_overlap) * ws)
 dataset = dataset.iloc[::skip_points,:]
 
-
-pickle.dump(dataset, open('concat_frequency.pkl', 'wb'))
+pickle.dump(dataset, open('concat_with_skipping.pkl', 'wb'))
+print(data_table.shape)

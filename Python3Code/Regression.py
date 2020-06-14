@@ -24,6 +24,7 @@ import numpy as np
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 import pickle
+import shelve
 # Set up file names and locations.
 DATA_PATH = Path('./intermediate_datafiles/')
 DATASET_FNAME = sys.argv[1] if len(sys.argv) > 1 else 'chapter2_result.csv'
@@ -95,7 +96,7 @@ eval = RegressionEvaluation()
 
 # We repeat the experiment a number of times to get a bit more robust data as the initialization of e.g. the NN is random.
 
-repeats = 10
+repeats = 1
 
 # we set a washout time to give the NN's the time to stabilize. We do not compute the error during the washout time.
 
@@ -178,11 +179,22 @@ for i in range(0, len(possible_feature_sets)):
 DataViz.plot_performances_regression(['Reservoir', 'RNN', 'Time series'], feature_names, scores_over_all_algs)
 
 regr_train_y, regr_test_y = learner.reservoir_computing(train_X[features_after_chapter_5], train_y, test_X[features_after_chapter_5], test_y, gridsearch=False)
-DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y["Gyroscope z (rad/s)"], test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'heart rate')
+DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y["Gyroscope z (rad/s)"],
+                                              test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'gyr_z')
 regr_train_y, regr_test_y = learner.recurrent_neural_network(train_X[basic_features], train_y, test_X[basic_features], test_y, gridsearch=True)
-DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y['hr_watch_rate'], test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'heart rate')
+DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y['Gyroscope z (rad/s)'], test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'gyr_z')
 regr_train_y, regr_test_y = learner.time_series(train_X[basic_features], train_y, test_X[basic_features], test_y, gridsearch=True)
-DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y['hr_watch_rate'], test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'heart rate')
+DataViz.plot_numerical_prediction_versus_real(train_X.index, train_y, regr_train_y['Gyroscope z (rad/s)'], test_X.index, test_y, regr_test_y["Gyroscope z (rad/s)"], 'gyr_z')
+with shelve.open('temp/regression.out', 'n') as f:
+    for key in dir():
+        print(key)
+        try:
+            f[key] = globals()[key]
+        except TypeError:
+            #
+            # __builtins__, my_shelf, and imported modules can not be shelved.
+            #
+            print('ERROR shelving: {0}'.format(key))
 exit()
 # And now some example code for using the dynamical systems model with parameter tuning (note: focus on predicting accelerometer data):
 
