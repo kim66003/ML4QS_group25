@@ -61,14 +61,16 @@ class CreateDataset:
 
         if aggregation == 'avg':
             print(self.data_table[columns])
-            average_dataset = self.data_table[columns].groupby(
-                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table[time_col])
+            average_dataset = self.data_table[columns + [time_col]].groupby(
+                pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
             ).mean()
-            binary_dataset = self.data_table[label_columns].groupby(
-                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table[time_col])
-            ).mean()
+            binary_dataset = self.data_table[label_columns + [time_col]].groupby(
+                pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
+            ).max()
             print(average_dataset.columns)
-            # aggregated_data =
+            print(binary_dataset.columns)
+            aggregated_data = pd.concat([average_dataset, binary_dataset], axis=1)
+            print(aggregated_data)
             # self.all_datasets.append(self.self.data_table)
         else:
             raise ValueError(f"Unknown aggregation {aggregation}")
