@@ -39,19 +39,21 @@ class CreateDataset:
 
     # Add numerical data, we assume timestamps in the form of nanoseconds from the epoch
     def add_numerical_dataset(self, file, timestamp_col, value_cols, aggregation='avg', prefix='', unit='s'):
-        print(f'Reading data from {file}')
-        dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
-        # Convert timestamps to dates
-        dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit=unit)
         # dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
 
         # Create a table based on the times found in the dataset
         if self.data_table is None:
+            print(f'Reading data from {file}')
+            dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
+            # Convert timestamps to dates
+            dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit=unit)
             print("Min timestamp: {}\n Max timestamp: {}".format(min(dataset[timestamp_col]), max(dataset[timestamp_col])))
             self.create_dataset(min(dataset[timestamp_col]), max(dataset[timestamp_col]), value_cols, prefix)
         else:
             for col in value_cols:
                 self.data_table[str(prefix) + str(col)] = np.nan
+            dataset = self.data_table
+            self.create_dataset(min(dataset[timestamp_col]), max(dataset[timestamp_col]), value_cols, prefix)
 
         # Over all rows in the new table
         for i in tqdm(range(0, len(self.data_table.index))):

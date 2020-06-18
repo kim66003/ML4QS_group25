@@ -211,17 +211,39 @@ datasets/watch/gyro/data_1648_gyro_watch.txt
 datasets/watch/gyro/data_1649_gyro_watch.txt
 datasets/watch/gyro/data_1650_gyro_watch.txt"""
 
+labels = {
+    'A': 'walking',
+    'B': 'jogging',
+    'C': 'stairs',
+    'D': 'sitting',
+    'E': 'standing',
+    'F': 'typing',
+    'G': 'brushing_teeth',
+    'H': 'eating_soup',
+    'I': 'eating_chips',
+    'J': 'eating_pasta',
+    'K': 'drinking_from_cup',
+    'L': 'eating_sandwich',
+    'M': 'kicking',
+    'O': 'playing_catch',
+    'P': 'dribbling',
+    'Q': 'writing',
+    'R': 'clapping',
+    'S': 'folding',
+}
+
 datasets = [phone_acc_list, phone_gyr_list, watch_acc_list, watch_gyr_list]
 
-field_names = ['activity', 'timestamp', 'x', 'y', 'z']
+field_names = ['id', 'activity', 'timestamp', 'x', 'y', 'z']
 for i in range(len(datasets)):
     datasets[i] = datasets[i].splitlines()
 
 def load_to_dataframe(path):
-    data = pd.read_csv(path, header=None, index_col=0)
-    data = data.rename(columns={i + 1: field_names[i] for i in range(len(field_names))})
-    data['z'] = data['z'].apply(lambda x: x.replace(';', ''))
-    print(data)
+    data = pd.read_csv(path, header=None)
+    data = data.rename(columns={i : field_names[i] for i in range(len(field_names))})
+    data['z'] = data['z'].apply(lambda x: float(x.replace(';', '')))
+    data['timestamp'] = pd.to_datetime(data['timestamp'])
+    return data
 
 if __name__ == '__main__':
     load_to_dataframe(datasets[0][0])

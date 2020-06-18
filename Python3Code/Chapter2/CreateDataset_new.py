@@ -19,7 +19,7 @@ from functools import reduce
 
 class CreateDataset:
 
-    def __init__(self, base_dir, granularity, data_table):
+    def __init__(self, base_dir, granularity, data_table=None):
         self.base_dir = base_dir
         self.granularity = granularity
         self.data_table = data_table
@@ -40,9 +40,9 @@ class CreateDataset:
         
 
     # Add numerical data, we assume timestamps in the form of nanoseconds from the epoch
-    def add_numerical_dataset(self, file, columns, aggregation='avg', label_prefix='label_', prefix=''):
+    def add_numerical_dataset(self, file, columns, aggregation='avg', time_col='timestamp',
+                              label_prefix='label_',prefix=''):
         label_columns = [x for x in self.data_table.columns if label_prefix in x]
-        assert len(self.data_table.columns) == len(aggregation)
 
 
         # Create a table based on the times found in the dataset
@@ -55,16 +55,17 @@ class CreateDataset:
             # Convert timestamps to dates
             dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
             self.create_dataset(min(dataset[timestamp_col]), max(dataset[timestamp_col]), value_cols, prefix)    
-        else:
-            for col in columns:
-                self.data_table[str(prefix) + str(col)] = np.nan
+        # else:
+        #     for col in columns:
+        #         self.data_table[str(prefix) + str(col)] = np.nan
 
         if aggregation == 'avg':
+            print(self.data_table[columns])
             average_dataset = self.data_table[columns].groupby(
-                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table.index)
+                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table[time_col])
             ).mean()
             binary_dataset = self.data_table[label_columns].groupby(
-                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table)
+                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table[time_col])
             ).mean()
             print(average_dataset.columns)
             # aggregated_data =
