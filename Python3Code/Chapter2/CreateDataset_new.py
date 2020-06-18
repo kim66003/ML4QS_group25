@@ -40,25 +40,35 @@ class CreateDataset:
         
 
     # Add numerical data, we assume timestamps in the form of nanoseconds from the epoch
-    def add_numerical_dataset(self, file, aggregation='avg', prefix=''):
-        print(f'Reading data from {file}')
-        dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
-        columns = dataset.columns.tolist()
-        timestamp_col = columns[0]
-        value_cols = columns[1:]
-        # Convert timestamps to dates
-        dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
+    def add_numerical_dataset(self, file, columns, aggregation='avg', label_prefix='label_', prefix=''):
+        label_columns = [x for x in self.data_table.columns if label_prefix in x]
+        assert len(self.data_table.columns) == len(aggregation)
+
 
         # Create a table based on the times found in the dataset
         if self.data_table is None:
+            print(f'Reading data from {file}')
+            dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
+            columns = dataset.columns.tolist()
+            timestamp_col = columns[0]
+            value_cols = columns[1:]
+            # Convert timestamps to dates
+            dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
             self.create_dataset(min(dataset[timestamp_col]), max(dataset[timestamp_col]), value_cols, prefix)    
         else:
-            for col in value_cols:
+            for col in columns:
                 self.data_table[str(prefix) + str(col)] = np.nan
 
         if aggregation == 'avg':
-            self.dataset = dataset.groupby(pd.Grouper(freq=str(self.granularity)+'ms', key=timestamp_col)).mean()
-            self.all_datasets.append(self.dataset)
+            average_dataset = self.data_table[columns].groupby(
+                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table.index)
+            ).mean()
+            binary_dataset = self.data_table[label_columns].groupby(
+                pd.Grouper(freq=str(self.granularity)+'ms', key=self.data_table)
+            ).mean()
+            print(average_dataset.columns)
+            # aggregated_data =
+            # self.all_datasets.append(self.self.data_table)
         else:
             raise ValueError(f"Unknown aggregation {aggregation}")
         
