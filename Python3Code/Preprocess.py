@@ -26,8 +26,12 @@ class Preprocess:
         prefix = ['acc_phone_', 'gyr_phone_', 'acc_watch_', 'gyr_watch_'][user_index]
         for label in labels.values():
             self.data.data_table['label_' + label] = 0
+        print(self.data.data_table.isna().sum())
+        print('Making labels')
         for i in tqdm(self.data.data_table.index):
             self.data.data_table.loc[i, 'label_' + labels[self.data.data_table.loc[i,'activity']]] = 1
+        print(self.data.data_table)
+        print(self.data.data_table.isna().sum())
         print('Aggregating data')
         self.data.add_numerical_dataset('', ['x', 'y', 'z'], 'avg', prefix=prefix[user_index], time_col='timestamp')
         if previous_table is not None:

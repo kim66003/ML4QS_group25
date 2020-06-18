@@ -67,11 +67,11 @@ class CreateDataset:
             binary_dataset = self.data_table[label_columns + [time_col]].groupby(
                 pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
             ).max()
-            print(average_dataset.columns)
-            print(binary_dataset.columns)
+            print(binary_dataset.isna().sum())
+            binary_dataset = binary_dataset.astype(int)
             aggregated_data = pd.concat([average_dataset, binary_dataset], axis=1)
-            print(aggregated_data)
-            # self.all_datasets.append(self.self.data_table)
+
+            self.all_datasets.append(aggregated_data)
         else:
             raise ValueError(f"Unknown aggregation {aggregation}")
         
