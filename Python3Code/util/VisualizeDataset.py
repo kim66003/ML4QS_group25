@@ -40,14 +40,13 @@ class VisualizeDataset:
 
         for format in formats:
             if self.save_path is not None:
+                save_path = self.figures_dir / f'{self.save_path}.{format}'
+            else:
                 if save_path is None:
                     save_path = self.figures_dir / f'{fig_name}.{format}'
                 else:
                     (self.figures_dir / Path(save_path)).mkdir(exist_ok=True, parents=True)
                     save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
-            else:
-                (self.figures_dir / Path(self.save_path)).mkdir(exist_ok=True, parents=True)
-                save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
             plot_obj.savefig(save_path)
             print(f'Figure saved to {save_path}')
 
