@@ -232,8 +232,12 @@ labels = {
     'S': 'folding',
 }
 
+time_col = 'timestamp'
+
 preprocessed_phone_data = 'intermediate_datafiles/data_phone.csv'
 preprocessed_watch_data = 'intermediate_datafiles/data_watch.csv'
+outlier_phone_data = 'intermediate_datafiles/outliers_phone.csv'
+outlier_watch_data = 'intermediate_datafiles/outliers_watch.csv'
 
 datasets = [phone_acc_list, phone_gyr_list, watch_acc_list, watch_gyr_list]
 
