@@ -46,8 +46,8 @@ def main(data_file, save_file, viz):
 
         # And try out all different approaches. Note that we have done some optimization
         # of the parameter values for each of the approaches by visual inspection.
-        # dataset = OutlierDistr.chauvenet(dataset, col)
-        # DataViz.plot_binary_outliers(dataset, col, col + '_outlier')
+        dataset = OutlierDistr.chauvenet(dataset, col)
+        DataViz.plot_binary_outliers(dataset, col, col + '_outlier')
         dataset = OutlierDistr.mixture_model(dataset, col)
         print(dataset.shape)
         DataViz.plot_dataset(dataset, [col, col + '_mixture'], ['exact','exact'], ['line', 'points'])
@@ -55,26 +55,26 @@ def main(data_file, save_file, viz):
         # n_data_points * n_data_points * point_size =
         # 31839 * 31839 * 32 bits = ~4GB available memory
         #
-        # try:
-        #     dataset = OutlierDist.simple_distance_based(dataset, [col], 'euclidean', 0.10, 0.99)
-        #     # DataViz.plot_binary_outliers(dataset, col, 'simple_dist_outlier')
-        #     print(dataset['simple_dist_outlier'].mean())
-        # except MemoryError as e:
-        #     print('Not enough memory available for simple distance-based outlier detection...')
-        #     print('Skipping.')
-        #
-        # try:
-        #     dataset = OutlierDist.local_outlier_factor(dataset, [col], 'euclidean', 5)
-        #     # DataViz.plot_dataset(dataset, [col, 'lof'], ['exact','exact'], ['line', 'points'])
-        # except MemoryError as e:
-        #     print('Not enough memory available for lof...')
-        #     print('Skipping.')
-        #
-        # # Remove all the stuff from the dataset again.
-        # cols_to_remove = [col + '_outlier', col + '_mixture', 'simple_dist_outlier', 'lof']
-        # for to_remove in cols_to_remove:
-        #     if to_remove in dataset:
-        #         del dataset[to_remove]
+        try:
+            dataset = OutlierDist.simple_distance_based(dataset, [col], 'euclidean', 0.10, 0.99)
+            # DataViz.plot_binary_outliers(dataset, col, 'simple_dist_outlier')
+            print(dataset['simple_dist_outlier'].mean())
+        except MemoryError as e:
+            print('Not enough memory available for simple distance-based outlier detection...')
+            print('Skipping.')
+
+        try:
+            dataset = OutlierDist.local_outlier_factor(dataset, [col], 'euclidean', 5)
+            # DataViz.plot_dataset(dataset, [col, 'lof'], ['exact','exact'], ['line', 'points'])
+        except MemoryError as e:
+            print('Not enough memory available for lof...')
+            print('Skipping.')
+
+        # Remove all the stuff from the dataset again.
+        cols_to_remove = [col + '_outlier', col + '_mixture', 'simple_dist_outlier', 'lof']
+        for to_remove in cols_to_remove:
+            if to_remove in dataset:
+                del dataset[to_remove]
 
     # We take Chauvenet's criterion and apply it to all but the label data...
 
