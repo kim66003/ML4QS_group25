@@ -35,7 +35,7 @@ DataViz = VisualizeDataset(__file__, show=False)
 clusteringNH = NonHierarchicalClustering()
 
 # Let us look at k-means first.
-k_values = range(2, 10)
+k_values = range(2, 25)
 silhouette_values = []
 
 ## Do some initial runs to determine the right number for k
@@ -59,7 +59,7 @@ for k in k_values:
 k = k_values[np.argmax(silhouette_values)]
 print(f'Highest K-Means silhouette score: k = {k}')
 
-dataset_knn = clusteringNH.k_means_over_instances(copy.deepcopy(dataset), attributes_to_cluster, k, 'default', 50, 50)
+dataset_knn = clusteringNH.k_means_over_instances(copy.deepcopy(dataset), attributes_to_cluster, k, 'default', 20, 50)
 DataViz.plot_silhouette(dataset_knn, 'cluster', 'silhouette')
 DataViz.plot_clusters_3d(dataset_knn, ["Acceleration x (m/s^2)","Acceleration y (m/s^2)","Acceleration z (m/s^2)",], 'cluster', ['label'])
 DataViz.plot_clusters_3d(dataset_knn, ["Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)",], 'cluster', ['label'])

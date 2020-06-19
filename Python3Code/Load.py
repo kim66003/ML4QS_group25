@@ -240,6 +240,8 @@ outlier_phone_data = 'intermediate_datafiles/outliers_phone.csv'
 outlier_watch_data = 'intermediate_datafiles/outliers_watch.csv'
 cluster_phone_data = 'intermediate_datafiles/clusters_data_phone.csv'
 cluster_watch_data = 'intermediate_datafiles/clusters_data_watch.csv'
+features_phone_data = 'intermediate_datafiles/features_data_phone.csv'
+features_watch_data = 'intermediate_datafiles/features_watch_phone.csv'
 
 datasets = [phone_acc_list, phone_gyr_list, watch_acc_list, watch_gyr_list]
 
