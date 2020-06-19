@@ -25,8 +25,8 @@ import pickle
 from Load import *
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
-dataset = pd.read_csv(outlier_phone_data)
-dataset.index = pd.to_datetime(dataset[time_col])
+dataset = pd.read_csv(outlier_phone_data, index_col=[time_col]).dropna()
+dataset.index = pd.to_datetime(dataset.index)
 
 DataViz = VisualizeDataset(__file__, show=False)
 
@@ -43,6 +43,7 @@ attributes_to_cluster = [
 "Acceleration x (m/s^2)","Acceleration y (m/s^2)","Acceleration z (m/s^2)",
         "Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)",
 ]
+
 print('===== kmeans clustering =====')
 for k in k_values:
     print(f'k = {k}')
@@ -67,4 +68,4 @@ util.print_latex_statistics_clusters(dataset_knn, 'cluster', attributes_to_clust
 del dataset_knn['silhouette']
 
 # And we select the outcome dataset of the knn clustering....
-dataset.to_csv(cluster_phone_data)
+dataset_knn.to_csv(cluster_phone_data)
