@@ -55,5 +55,5 @@ if __name__ == '__main__':
     # df1 = pd.read_csv(outlier_watch_data)
     # df2 = pd.read_csv(outlier_phone_data)
     # print(pd.concat([df1, df2]).drop_duplicates(keep=False))
-    rename_like(outlier_phone_data, rename_dict, '_kalman')
-    rename_like(outlier_watch_data, rename_dict, '_kalman')
+    rename_like(cluster_phone_data, rename_dict, '_kalman')
+    rename_like(cluster_watch_data, rename_dict, '_kalman')

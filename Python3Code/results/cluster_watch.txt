@@ -1,30 +1,30 @@
-\multirow{2}{*}{ Acceleration x (m/s^2) } & mean  &  -5.58 &  7.65\\
- & std  &  3.50 &  3.30\\
-\multirow{2}{*}{ Acceleration y (m/s^2) } & mean  &  -3.99 &  -3.61\\
- & std  &  4.71 &  4.38\\
-\multirow{2}{*}{ Acceleration z (m/s^2) } & mean  &  1.32 &  -0.29\\
- & std  &  3.57 &  3.65\\
-\multirow{2}{*}{ Gyroscope x (rad/s) } & mean  &  0.06 &  -0.09\\
- & std  &  0.95 &  1.71\\
-\multirow{2}{*}{ Gyroscope y (rad/s) } & mean  &  -0.02 &  -0.16\\
- & std  &  0.71 &  1.68\\
-\multirow{2}{*}{ Gyroscope z (rad/s) } & mean  &  0.03 &  0.07\\
- & std  &  0.71 &  1.44\\
-label_walking  & percentage  &  11.81 \% &  88.19 \%\\
-label_jogging  & percentage  &  39.44 \% &  60.56 \%\\
-label_dribbling  & percentage  &  15.86 \% &  84.14 \%\\
-label_playing_catch  & percentage  &  73.19 \% &  26.81 \%\\
-label_kicking  & percentage  &  8.61 \% &  91.39 \%\\
-label_stairs  & percentage  &  14.72 \% &  85.28 \%\\
-label_sitting  & percentage  &  59.50 \% &  40.50 \%\\
-label_drinking_from_cup  & percentage  &  99.58 \% &  0.42 \%\\
+\multirow{2}{*}{ acc_x } & mean  &  -5.51 &  6.90\\
+ & std  &  3.38 &  3.10\\
+\multirow{2}{*}{ acc_y } & mean  &  -4.07 &  -3.52\\
+ & std  &  4.34 &  3.72\\
+\multirow{2}{*}{ acc_z } & mean  &  1.43 &  -0.39\\
+ & std  &  3.26 &  3.15\\
+\multirow{2}{*}{ gyr_x } & mean  &  0.02 &  -0.00\\
+ & std  &  0.57 &  0.86\\
+\multirow{2}{*}{ gyr_y } & mean  &  -0.04 &  -0.11\\
+ & std  &  0.33 &  0.62\\
+\multirow{2}{*}{ gyr_z } & mean  &  0.02 &  0.08\\
+ & std  &  0.46 &  0.74\\
+label_walking  & percentage  &  11.94 \% &  88.06 \%\\
+label_jogging  & percentage  &  21.94 \% &  78.06 \%\\
+label_dribbling  & percentage  &  0.42 \% &  99.58 \%\\
+label_playing_catch  & percentage  &  80.31 \% &  19.69 \%\\
+label_kicking  & percentage  &  8.19 \% &  91.81 \%\\
+label_stairs  & percentage  &  12.22 \% &  87.78 \%\\
+label_sitting  & percentage  &  56.31 \% &  43.69 \%\\
+label_drinking_from_cup  & percentage  &  99.86 \% &  0.14 \%\\
 label_eating_soup  & percentage  &  100.00 \% &  0.00 \%\\
-label_standing  & percentage  &  17.52 \% &  82.48 \%\\
+label_standing  & percentage  &  17.11 \% &  82.89 \%\\
 label_clapping  & percentage  &  100.00 \% &  0.00 \%\\
-label_eating_chips  & percentage  &  95.83 \% &  4.17 \%\\
+label_eating_chips  & percentage  &  97.50 \% &  2.50 \%\\
 label_brushing_teeth  & percentage  &  100.00 \% &  0.00 \%\\
-label_eating_pasta  & percentage  &  98.89 \% &  1.11 \%\\
-label_eating_sandwich  & percentage  &  98.75 \% &  1.25 \%\\
-label_writing  & percentage  &  99.31 \% &  0.69 \%\\
+label_eating_pasta  & percentage  &  99.17 \% &  0.83 \%\\
+label_eating_sandwich  & percentage  &  98.89 \% &  1.11 \%\\
+label_writing  & percentage  &  99.17 \% &  0.83 \%\\
 label_typing  & percentage  &  100.00 \% &  0.00 \%\\
-label_folding  & percentage  &  20.42 \% &  79.58 \%\\
+label_folding  & percentage  &  17.92 \% &  82.08 \%\\

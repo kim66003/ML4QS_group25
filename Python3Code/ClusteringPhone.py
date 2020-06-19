@@ -39,10 +39,8 @@ k_values = range(2, 25)
 silhouette_values = []
 
 ## Do some initial runs to determine the right number for k
-attributes_to_cluster = [
-"Acceleration x (m/s^2)","Acceleration y (m/s^2)","Acceleration z (m/s^2)",
-        "Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)",
-]
+attributes_to_cluster =  ['acc_x', 'acc_y', 'acc_z', "gyr_x",
+    "gyr_y", "gyr_z", ]
 
 print('===== kmeans clustering =====')
 for k in k_values:
@@ -62,8 +60,8 @@ print(f'Highest K-Means silhouette score: k = {k}')
 
 dataset_knn = clusteringNH.k_means_over_instances(copy.deepcopy(dataset), attributes_to_cluster, k, 'default', 20, 50)
 DataViz.plot_silhouette(dataset_knn, 'cluster', 'silhouette')
-DataViz.plot_clusters_3d(dataset_knn, ["Acceleration x (m/s^2)","Acceleration y (m/s^2)","Acceleration z (m/s^2)",], 'cluster', ['label'])
-DataViz.plot_clusters_3d(dataset_knn, ["Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)",], 'cluster', ['label'])
+DataViz.plot_clusters_3d(dataset_knn, ['acc_x', 'acc_y', 'acc_z',  ], 'cluster', ['label'])
+DataViz.plot_clusters_3d(dataset_knn, ["gyr_x", "gyr_y", "gyr_z",], 'cluster', ['label'])
 util.print_latex_statistics_clusters(dataset_knn, 'cluster', attributes_to_cluster, 'label')
 del dataset_knn['silhouette']
 
