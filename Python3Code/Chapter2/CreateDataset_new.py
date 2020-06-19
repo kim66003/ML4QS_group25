@@ -64,14 +64,16 @@ class CreateDataset:
             average_dataset = self.data_table[columns + [time_col]].groupby(
                 pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
             ).mean()
-            binary_dataset = self.data_table[label_columns + [time_col]].groupby(
-                pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
-            ).max()
-            print(binary_dataset.isna().sum())
-            binary_dataset = binary_dataset.astype(int)
-            aggregated_data = pd.concat([average_dataset, binary_dataset], axis=1)
+            if len(label_columns):
+                binary_dataset = self.data_table[label_columns + [time_col]].groupby(
+                    pd.Grouper(freq=str(self.granularity)+'ms', key=time_col)
+                ).max()
+                binary_dataset = binary_dataset.astype(int)
+                aggregated_data = pd.concat([average_dataset, binary_dataset], axis=1)
 
-            self.all_datasets.append(aggregated_data)
+                self.all_datasets.append(aggregated_data)
+            else:
+                self.all_datasets.append(average_dataset)
         else:
             raise ValueError(f"Unknown aggregation {aggregation}")
         
@@ -82,9 +84,17 @@ class CreateDataset:
 
     # Add data in which we have rows that indicate the occurrence of a certain event with a given start and end time.
     # 'aggregation' can be 'sum' or 'binary'.
-    def add_event_dataset(self, file, start_timestamp_col, end_timestamp_col, value_col, aggregation='sum'):
-        print(f'Reading data from {file}')
-        dataset = pd.read_csv(self.base_dir / file)
+    def add_event_dataset(self, file, start_timestamp_col, end_timestamp_col, value_col, aggregation='sum',
+                          from_file=True, dataset=None):
+
+        print(self.data_table.index)
+        assert (dataset is not None) == (not from_file)
+
+        if from_file:
+            print(f'Reading data from {file}')
+            dataset = pd.read_csv(self.base_dir / file)
+        else:
+            dataset = dataset
 
         # Convert timestamps to datetime.
         dataset[start_timestamp_col] = pd.to_datetime(dataset[start_timestamp_col])
