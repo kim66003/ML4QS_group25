@@ -36,10 +36,24 @@ dataset.index = pd.to_datetime(dataset[time_col])
 for col in attributes_to_impute:
     print('Applying kalman filter for ', col)
     dataset = KalFilter.apply_kalman_filter(dataset, col)
-    DataViz.save_path = save_names[col] + '_imputed_values'
+    DataViz.save_path = save_names[col] + '_phone_imputed_values'
     DataViz.plot_imputed_values(dataset, ['original', 'kalman'], col, dataset[col])
-    DataViz.save_path = save_names[col] + '_all_data'
+    DataViz.save_path = save_names[col] + '_phone_all_data'
     DataViz.plot_dataset(dataset, [col, col + '_kalman'], ['exact','exact'], ['line', 'line'])
 
 print(dataset.columns)
 dataset.to_csv(outlier_phone_data)
+
+dataset = pd.read_csv(preprocessed_watch_data)
+dataset.index = pd.to_datetime(dataset[time_col])
+
+for col in attributes_to_impute:
+    print('Applying kalman filter for ', col)
+    dataset = KalFilter.apply_kalman_filter(dataset, col)
+    DataViz.save_path = save_names[col] + '_watch_imputed_values'
+    DataViz.plot_imputed_values(dataset, ['original', 'kalman'], col, dataset[col])
+    DataViz.save_path = save_names[col] + '_watch_all_data'
+    DataViz.plot_dataset(dataset, [col, col + '_kalman'], ['exact','exact'], ['line', 'line'])
+
+print(dataset.columns)
+dataset.to_csv(outlier_watch_data)
