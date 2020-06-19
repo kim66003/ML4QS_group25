@@ -44,20 +44,11 @@ class CreateDataset:
 
     # Add numerical data, we assume timestamps in the form of nanoseconds from the epoch
     def add_numerical_dataset(self, dataset, sensor, aggregation='avg', prefix=''):
-#         print(f'Reading data from file')
-#         dataset = pd.read_csv(self.base_dir + file, skipinitialspace=True)
         columns = dataset.columns.tolist()
         timestamp_col = columns[0]
         value_cols = columns[1:]
         # Convert timestamps to dates
         dataset[timestamp_col] = pd.to_datetime(dataset[timestamp_col], unit='s')
-
-        # Create a table based on the times found in the dataset
-#         if self.data_table is None:
-#             self.create_dataset(min(dataset[timestamp_col]), max(dataset[timestamp_col]), value_cols, prefix) 
-#         else:
-#             for col in value_cols:
-#                 self.data_table[str(prefix) + str(col)] = np.nan
 
         if aggregation == 'avg':
             activity_type = dataset.activity.unique()[0]
@@ -134,4 +125,3 @@ class CreateDataset:
     def merge_datasets(self):
 #         self.all_datasets = [self.accel_table, self.gyro_table]
         self.data_table = pd.merge(self.accel_table, self.gyro_table, how='outer', on=['id', 'phone', 'watch', 'activity'], left_index=True, right_index=True, sort=True, suffixes=('_x', '_y'), copy=True, indicator=True)
-#         self.data_table = reduce(lambda x,y: pd.merge(x,y, left_index=True, right_index=True, how='outer'), self.all_datasets)
