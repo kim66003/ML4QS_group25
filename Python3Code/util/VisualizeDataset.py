@@ -31,6 +31,7 @@ class VisualizeDataset:
         self.plot_number = 1
         self.figures_dir = Path('figures') / subdir
         self.figures_dir.mkdir(exist_ok=True, parents=True)
+        self.save_path = None
 
 
     def save(self, plot_obj, formats=('png',), save_path=None): # 'svg'
@@ -38,10 +39,14 @@ class VisualizeDataset:
         fig_name = f'figure_{self.plot_number}'
 
         for format in formats:
-            if save_path is None:
-                save_path = self.figures_dir / f'{fig_name}.{format}'
+            if self.save_path is not None:
+                if save_path is None:
+                    save_path = self.figures_dir / f'{fig_name}.{format}'
+                else:
+                    (self.figures_dir / Path(save_path)).mkdir(exist_ok=True, parents=True)
+                    save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
             else:
-                (self.figures_dir / Path(save_path)).mkdir(exist_ok=True, parents=True)
+                (self.figures_dir / Path(self.save_path)).mkdir(exist_ok=True, parents=True)
                 save_path = self.figures_dir / Path(save_path) / f'{fig_name}.{format}'
             plot_obj.savefig(save_path)
             print(f'Figure saved to {save_path}')
