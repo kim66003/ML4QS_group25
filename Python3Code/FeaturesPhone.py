@@ -23,8 +23,8 @@ import pickle
 from Load import *
 
 # As usual, we set our program constants, read the input file and initialize a visualization object.
-dataset = pd.read_csv(cluster_phone_data)
-dataset.index = pd.to_datetime(dataset[time_col])
+dataset = pd.read_csv(cluster_phone_data, index_col=time_col)
+dataset.index = pd.to_datetime(dataset.index)
 
 
 # Let us create our visualization class again.
@@ -40,7 +40,8 @@ print('attributes time domain')
 # First we focus on the time domain.
 
 # Set the window sizes to the number of instances representing 5 seconds, 30 seconds and 5 minutes
-window_sizes = [int(float(5000)/milliseconds_per_instance), int(float(0.5*60000)/milliseconds_per_instance), int(float(5*60000)/milliseconds_per_instance)]
+window_sizes = [int(float(5000)/milliseconds_per_instance), int(float(0.5*60000)/milliseconds_per_instance),
+                int(float(5*60000)/milliseconds_per_instance), int(float(10*60000)/milliseconds_per_instance)]
 
 print('total window sizes', window_sizes)
 
@@ -49,17 +50,20 @@ NumAbs = NumericalAbstraction()
 dataset_copy = copy.deepcopy(dataset)
 
 
-periodic_predictor_cols = ['Acceleration x (m/s^2)', 'Acceleration y (m/s^2)', 'Acceleration z (m/s^2)', "Gyroscope x (rad/s)",
-    "Gyroscope y (rad/s)", "Gyroscope z (rad/s)", ]
+periodic_predictor_cols = ['acc_x', 'acc_y', 'acc_z', "gyr_x",
+    "gyr_y", "gyr_z", ]
 
 for ws in window_sizes:
-    dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'mean')
-    dataset_copy = NumAbs.abstract_numerical(dataset_copy, ['Acceleration x (m/s^2)'], ws, 'std')
+    dataset_copy = NumAbs.abstract_numerical(dataset_copy, periodic_predictor_cols, ws, 'mean')
+    dataset_copy = NumAbs.abstract_numerical(dataset_copy, periodic_predictor_cols, ws, 'std')
     print('window size', ws)
 
-ws = int(float(0.5*60000)/milliseconds_per_instance)
-dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'mean')
-dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'std')
+print(dataset_copy.columns)
+DataViz.plot_dataset(dataset_copy, ['acc_x', 'acc_y', 'acc_z', 'label'], ['exact', 'like', 'like', 'like'], ['line', 'line', 'line', 'points'])
+
+# ws = int(float(0.5*60000)/milliseconds_per_instance)
+# dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'mean')
+# dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'std')
 
 
 print('temporal', dataset.shape)
@@ -81,10 +85,10 @@ for col in dataset.columns:
     print(col, dataset[dataset[col].isna() == True].count())
 # Now we only take a certain percentage of overlap in the windows, otherwise our training examples will be too much alike.
 
-pickle.dump(dataset, open('concat_no_skipping.pkl', 'wb'))
+# pickle.dump(dataset, open('concat_no_skipping.pkl', 'wb'))
 # The percentage of overlap we allow
-window_overlap = 0.9
-skip_points = int((1-window_overlap) * ws)
-dataset = dataset.iloc[::skip_points,:]
+# window_overlap = 0.9
+# skip_points = int((1-window_overlap) * ws)
+# dataset = dataset.iloc[::skip_points,:]
 dataset.to_csv(features_phone_data)
 print(dataset.shape)
