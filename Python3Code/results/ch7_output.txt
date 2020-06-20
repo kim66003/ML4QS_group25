@@ -1,0 +1,1063 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+klm@ml4qs-instance-3:~$ cd ML4QS_group25/
+klm@ml4qs-instance-3:~/ML4QS_group25$ git pull
+Already up-to-date.
+klm@ml4qs-instance-3:~/ML4QS_group25$ cd Python3Code/
+klm@ml4qs-instance-3:~/ML4QS_group25/Python3Code$ python3 Experiment.py
+experiment with phone
+(12972, 159)
+(12972, 158)
+(12972, 1)
+feature selection
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+Figure saved to figures/features_data_phoneExperiment/figure_1.png
+feature selection finished for intermediate_datafiles/features_data_phone.csv
+ERROR shelving: DataViz
+ERROR shelving: cluster_features
+ERROR shelving: dataset
+ERROR shelving: eval
+ERROR shelving: f
+ERROR shelving: feature_names
+ERROR shelving: features
+ERROR shelving: features_2
+ERROR shelving: features_3
+ERROR shelving: features_4
+ERROR shelving: file
+ERROR shelving: freq_features
+ERROR shelving: fs
+ERROR shelving: learner
+ERROR shelving: ordered_scores
+ERROR shelving: performance_test
+ERROR shelving: performance_training
+ERROR shelving: possible_feature_sets
+ERROR shelving: prepare
+ERROR shelving: selected_features
+ERROR shelving: test_X
+ERROR shelving: test_y
+ERROR shelving: time_features
+ERROR shelving: train_X
+ERROR shelving: train_y
+2020-06-20 14:23:09.539602
+possible feature sets 0
+2020-06-20 14:23:09.541672
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    5.7s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:   43.6s finished
+Figure saved to figures/features_data_phoneExperiment/figure_2.png
+2020-06-20 14:24:01.652294
+decision tree
+Figure saved to figures/features_data_phoneExperiment/figure_3.png
+Basic features & 0.9913\emph{( 0.9894 - 0.9932 )}  & 0.8412\emph{( 0.8295 - 0.8529 )} & 0.8579\emph{( 0.8506 - 0.8653 )}  & 0.7785\emph{( 0.7652 - 0.7918 )}\\
+\hline
+2020-06-20 14:24:04.500781
+possible feature sets 1
+2020-06-20 14:24:04.503945
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    5.7s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:   43.7s finished
+Figure saved to figures/features_data_phoneExperiment/figure_4.png
+2020-06-20 14:24:52.666021
+decision tree
+Figure saved to figures/features_data_phoneExperiment/figure_5.png
+Features with time & 0.9887\emph{( 0.9864 - 0.9909 )}  & 0.8404\emph{( 0.8287 - 0.8522 )} & 0.8579\emph{( 0.8506 - 0.8653 )}  & 0.7793\emph{( 0.7660 - 0.7926
+)}\\\hline
+2020-06-20 14:24:56.321225
+possible feature sets 2
+2020-06-20 14:24:56.343265
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:   25.5s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  4.1min finished
+Figure saved to figures/features_data_phoneExperiment/figure_6.png
+2020-06-20 14:29:14.095128
+decision tree
+Figure saved to figures/features_data_phoneExperiment/figure_7.png
+Features with frequency & 1.0000\emph{( 1.0000 - 1.0000 )}  & 0.9838\emph{( 0.9798 - 0.9879 )} & 0.9960\emph{( 0.9947 - 0.9974 )}  & 0.9671\emph{( 0.9614 - 0.
+9728 )}\\\hline
+2020-06-20 14:29:46.005341
+possible feature sets 3
+2020-06-20 14:29:46.044269
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:   25.0s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  4.0min finished
+Figure saved to figures/features_data_phoneExperiment/figure_8.png
+2020-06-20 14:34:00.170368
+decision tree
+Figure saved to figures/features_data_phoneExperiment/figure_9.png
+Features with cluster & 1.0000\emph{( 1.0000 - 1.0000 )}  & 0.9848\emph{( 0.9809 - 0.9888 )} & 0.9960\emph{( 0.9947 - 0.9974 )}  & 0.9671\emph{( 0.9614 - 0.97
+28 )}\\\hline
+2020-06-20 14:34:32.617240
+possible feature sets 4
+2020-06-20 14:34:32.620728
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    9.5s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  1.4min finished
+Figure saved to figures/features_data_phoneExperiment/figure_10.png
+2020-06-20 14:36:04.575339
+decision tree
+Figure saved to figures/features_data_phoneExperiment/figure_11.png
+Selected features & 0.9987\emph{( 0.9979 - 0.9994 )}  & 0.9645\emph{( 0.9586 - 0.9705 )} & 0.9985\emph{( 0.9976 - 0.9993 )}  & 0.9581\emph{( 0.9517 - 0.9645 )
+}\\\hline
+Figure saved to figures/features_data_phoneExperiment/figure_12.png
+2020-06-20 14:36:13.335086
+experiment with watch
+(12964, 159)
+(12964, 158)
+(12964, 1)
+feature selection
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+Figure saved to figures/features_watch_phoneExperiment/figure_1.png
+feature selection finished for intermediate_datafiles/features_watch_phone.csv
+ERROR shelving: DataViz
+ERROR shelving: cluster_features
+ERROR shelving: dataset
+ERROR shelving: eval
+ERROR shelving: f
+ERROR shelving: feature_names
+ERROR shelving: features
+ERROR shelving: features_2
+ERROR shelving: features_3
+ERROR shelving: features_4
+ERROR shelving: file
+ERROR shelving: freq_features
+ERROR shelving: fs
+ERROR shelving: learner
+ERROR shelving: ordered_scores
+ERROR shelving: performance_test
+ERROR shelving: performance_training
+ERROR shelving: possible_feature_sets
+ERROR shelving: prepare
+ERROR shelving: selected_features
+ERROR shelving: test_X
+ERROR shelving: test_y
+ERROR shelving: time_features
+ERROR shelving: train_X
+ERROR shelving: train_y
+2020-06-20 16:33:56.591829
+possible feature sets 0
+2020-06-20 16:33:56.593846
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    5.5s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:   47.8s finished
+Figure saved to figures/features_watch_phoneExperiment/figure_2.png
+2020-06-20 16:34:54.669032
+decision tree
+Figure saved to figures/features_watch_phoneExperiment/figure_3.png
+Basic features & 0.9856\emph{( 0.9831 - 0.9881 )}  & 0.7792\emph{( 0.7659 - 0.7925 )} & 0.7776\emph{( 0.7689 - 0.7863 )}  & 0.6823\emph{( 0.6673 - 0.6972 )}\\
+\hline
+2020-06-20 16:34:57.756132
+possible feature sets 1
+2020-06-20 16:34:57.782675
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    5.5s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:   47.6s finished
+Figure saved to figures/features_watch_phoneExperiment/figure_4.png
+2020-06-20 16:35:56.302612
+decision tree
+Figure saved to figures/features_watch_phoneExperiment/figure_5.png
+Features with time & 0.9869\emph{( 0.9845 - 0.9893 )}  & 0.7805\emph{( 0.7672 - 0.7937 )} & 0.7778\emph{( 0.7691 - 0.7866 )}  & 0.6810\emph{( 0.6660 - 0.6959
+)}\\\hline
+2020-06-20 16:36:00.161214
+possible feature sets 2
+2020-06-20 16:36:00.181960
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:   26.5s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  4.4min finished
+Figure saved to figures/features_watch_phoneExperiment/figure_6.png
+2020-06-20 16:41:13.366564
+decision tree
+Figure saved to figures/features_watch_phoneExperiment/figure_7.png
+Features with frequency & 1.0000\emph{( 1.0000 - 1.0000 )}  & 0.9825\emph{( 0.9783 - 0.9867 )} & 0.9938\emph{( 0.9922 - 0.9955 )}  & 0.9388\emph{( 0.9311 - 0.
+9465 )}\\\hline
+2020-06-20 16:41:48.812974
+possible feature sets 3
+2020-06-20 16:41:48.824878
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:   26.0s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  4.3min finished
+Figure saved to figures/features_watch_phoneExperiment/figure_8.png
+2020-06-20 16:46:53.945660
+decision tree
+Figure saved to figures/features_watch_phoneExperiment/figure_9.png
+Features with cluster & 1.0000\emph{( 1.0000 - 1.0000 )}  & 0.9828\emph{( 0.9786 - 0.9869 )} & 0.9938\emph{( 0.9922 - 0.9955 )}  & 0.9414\emph{( 0.9339 - 0.94
+89 )}\\\hline
+2020-06-20 16:47:30.344584
+possible feature sets 4
+2020-06-20 16:47:30.349319
+
+Repeat 0
+Random Forest
+Fitting 5 folds for each of 30 candidates, totalling 150 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    9.4s
+[Parallel(n_jobs=-1)]: Done 150 out of 150 | elapsed:  1.4min finished
+Figure saved to figures/features_watch_phoneExperiment/figure_10.png
+2020-06-20 16:49:14.501703
+decision tree
+Figure saved to figures/features_watch_phoneExperiment/figure_11.png
+Selected features & 0.9997\emph{( 0.9993 - 1.0001 )}  & 0.9802\emph{( 0.9757 - 0.9847 )} & 0.9971\emph{( 0.9960 - 0.9983 )}  & 0.9496\emph{( 0.9426 - 0.9566 )
+}\\\hline
+Figure saved to figures/features_watch_phoneExperiment/figure_12.png
+2020-06-20 16:49:23.543176
+klm@ml4qs-instance-3:~/ML4QS_group25/Python3Code$ cd ..
+klm@ml4qs-instance-3:~/ML4QS_group25$ git add .
+klm@ml4qs-instance-3:~/ML4QS_group25$ git commit -m "ch7 output"
+[master 39c9f5d] ch7 output
+ Committer: kim66003 <klm@ml4qs-instance-3.us-east1-c.c.ml4qs-279914.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 25 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_1.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_10.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_11.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_12.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_2.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_3.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_4.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_5.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_6.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_7.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_8.png
+ create mode 100644 Python3Code/figures/features_data_phoneExperiment/figure_9.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_1.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_10.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_11.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_12.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_2.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_3.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_4.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_5.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_6.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_7.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_8.png
+ create mode 100644 Python3Code/figures/features_watch_phoneExperiment/figure_9.png
+klm@ml4qs-instance-3:~/ML4QS_group25$ git push
+Username for 'https://github.com': kim66003
+Password for 'https://kim66003@github.com':
+Counting objects: 32, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (32/32), 2.09 MiB | 0 bytes/s, done.
+Total 32 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote:
+remote: GitHub found 1 vulnerability on kim66003/ML4QS_group25's default branch (1 high). To find out more, visit:
+remote:      https://github.com/kim66003/ML4QS_group25/network/alert/Python2_conda_requirements.txt/nltk/open
+remote:
+To https://github.com/kim66003/ML4QS_group25.git
+   f7926b0..39c9f5d  master -> master
+klm@ml4qs-instance-3:~/ML4QS_group25$
+klm@ml4qs-instance-3:~/ML4QS_group25$
