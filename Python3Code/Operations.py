@@ -52,8 +52,9 @@ def rename_like(path, rename_dict, suffix):
     print(dataset.columns)
 
 if __name__ == '__main__':
-    # df1 = pd.read_csv(outlier_watch_data)
+    df1 = pd.read_csv(features_phone_data)
+    print(df1[[col for col in df1.columns if 'pse' in col]])
     # df2 = pd.read_csv(outlier_phone_data)
     # print(pd.concat([df1, df2]).drop_duplicates(keep=False))
-    rename_like(cluster_phone_data, rename_dict, '_kalman')
-    rename_like(cluster_watch_data, rename_dict, '_kalman')
+    # rename_like(cluster_phone_data, rename_dict, '_kalman')
+    # rename_like(cluster_watch_data, rename_dict, '_kalman')

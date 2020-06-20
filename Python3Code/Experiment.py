@@ -33,7 +33,7 @@ def print_date():
 
 
 def log(list):
-    with open('results/classification.txt', 'w+') as f:
+    with open('results/classification.txt', 'a+') as f:
         f.writelines(list)
 
 
