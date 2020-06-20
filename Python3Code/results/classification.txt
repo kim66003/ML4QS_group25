@@ -1,1 +1,1 @@
-Features 2
+DT train acc: 0.997135 test acc: 0.949614
