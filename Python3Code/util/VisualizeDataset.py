@@ -57,6 +57,7 @@ class VisualizeDataset:
     # in the same graph. The display should express whether points or a line should be plotted.
     # Match can be 'exact' or 'like'. Display can be 'points' or 'line'.
     def plot_dataset(self, data_table, columns, match='like', display='line', save_path=None):
+        plt.clf()
         names = list(data_table.columns)
 
         # Create subplots if more columns are specified.
@@ -122,6 +123,7 @@ class VisualizeDataset:
 
     def plot_xy(self, x, y, method='plot', xlabel=None, ylabel=None, xlim=None, ylim=None, names=None,
                 line_styles=None, loc=None, title=None, save_path=None):
+        plt.clf()
         for input in x, y:
             if not hasattr(input[0], '__iter__'):
                 raise TypeError('x/y should be given as a list of lists of coordinates')
@@ -143,6 +145,7 @@ class VisualizeDataset:
             plt.show()
 
     def plot_dataset_boxplot(self, dataset, cols, save_path=None):
+        plt.clf()
         plt.Figure()
         dataset[cols].plot.box()
         plt.ylim([-30,30])
@@ -152,6 +155,7 @@ class VisualizeDataset:
 
     # This function plots the real and imaginary amplitudes of the frequencies found in the Fourier transformation.
     def plot_fourier_amplitudes(self, freq, ampl_real, ampl_imag, save_path=None):
+        plt.clf()
         plt.xlabel('Freq(Hz)')
         plt.ylabel('amplitude')
         # Plot the real values as a '+' and imaginary in the same way (though with a different color).
@@ -164,6 +168,7 @@ class VisualizeDataset:
     # Plot outliers in case of a binary outlier score. Here, the col specifies the real data
     # column and outlier_col the columns with a binary value (outlier or not)
     def plot_binary_outliers(self, data_table, col, outlier_col):
+        plt.clf()
         data_table.loc[:,:] = data_table.dropna(axis=0, subset=[col, outlier_col])
         data_table.loc[:,outlier_col] = data_table[outlier_col].astype('bool')
         f, xar = plt.subplots()
@@ -182,6 +187,7 @@ class VisualizeDataset:
     # Plot values that have been imputed using one of our imputation approaches. Here, values expresses the
     # 1 to n datasets that have resulted from value imputation.
     def plot_imputed_values(self, data_table, names, col, *values):
+        plt.clf()
 
         xfmt = md.DateFormatter('%H:%M')
 
@@ -219,6 +225,7 @@ class VisualizeDataset:
     # that do not include the label. We assume the labels to be represented by 1 or more binary
     # columns.
     def plot_clusters_3d(self, data_table, data_cols, cluster_col, label_cols, save_path=None):
+        plt.clf()
 
         color_index = 0
         point_displays = ['+', 'x', '*', 'd', 'o', 's', '<', '>']
@@ -265,6 +272,7 @@ class VisualizeDataset:
     # silhouette of the individual datapoints per cluster to allow studying the clusters internally as well.
     # For this, a column expressing the silhouette for each datapoint is assumed.
     def plot_silhouette(self, data_table, cluster_col, silhouette_col, save_path=None):
+        plt.clf()
         # Taken from the examples of scikit learn
         #(http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
 
@@ -312,6 +320,7 @@ class VisualizeDataset:
     # Plot a dendorgram for hierarchical clustering. It assumes that the linkage as
     # used in sk learn is passed as an argument as well.
     def plot_dendrogram(self, dataset, linkage, save_path=None):
+        plt.clf()
         sys.setrecursionlimit(40000)
         plt.title('Hierarchical Clustering Dendrogram')
         plt.xlabel('time points')
@@ -325,6 +334,7 @@ class VisualizeDataset:
     # Plot the confusion matrix that has been derived in the evaluation metrics. Classes expresses the labels
     # for the matrix. We can normalize or show the raw counts. Of course this applies to classification problems.
     def plot_confusion_matrix(self, cm, classes, normalize=False, save_path=None):
+        plt.clf()
         # Taken from http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html
 
         # Select the colormap.
@@ -355,6 +365,7 @@ class VisualizeDataset:
     # a regression problem. It assumes only a single value to be predicted over a number of cases. The variables identified
     # with reg_ are the predictions.
     def plot_numerical_prediction_versus_real(self, train_time, train_y, regr_train_y, test_time, test_y, regr_test_y, label, save_path=None):
+        plt.clf()
         self.legends = {}
 
         # Plot the values, training set cases in blue, test set in red.
@@ -393,6 +404,7 @@ class VisualizeDataset:
     # raw output of the MO dynamical systems approach, which includes rows with the fitness and predictions for the training
     # and test set. We select the fitness and plot them in a graph. Note that the plot only considers the first two dimensions.
     def plot_pareto_front(self, dynsys_output, save_path=None):
+        plt.clf()
         fit_1_train = []
         fit_2_train = []
         fit_1_test = []
@@ -413,6 +425,7 @@ class VisualizeDataset:
     # Plot a prediction for a regression model in case it concerns a multi-objective dynamical systems model. Here, we plot
     # the individual specified. Again, the complete output of the MO approach is used as argument.
     def plot_numerical_prediction_versus_real_dynsys_mo(self, train_time, train_y, test_time, test_y, dynsys_output, individual, label):
+        plt.clf()
         regr_train_y = dynsys_output[individual][0][label]
         regr_test_y = dynsys_output[individual][2][label]
         train_y = train_y[label]
