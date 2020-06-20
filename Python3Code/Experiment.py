@@ -20,7 +20,7 @@ from datetime import datetime
 from Load import *
 import shelve
 
-N_FORWARD_SELECTION = 2
+N_FORWARD_SELECTION = 20
 
 basic_features = ['acc_x', 'acc_y', 'acc_z', "gyr_x",
     "gyr_y", "gyr_z", ]
