@@ -1,0 +1,1067 @@
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.7s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.5s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.7s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.5s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.7s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.5s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.7s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.5s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+19
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    2.0s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.9s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.7s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.9s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.5s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    2.0s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.9s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.8s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.6s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.7s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Fitting 5 folds for each of 10 candidates, totalling 50 fits
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 8 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  34 tasks      | elapsed:    1.9s
+[Parallel(n_jobs=-1)]: Done  50 out of  50 | elapsed:    2.8s finished
+Figure saved to figures/features_data_phoneExperiment/figure_1.png
+feature selection finished for intermediate_datafiles/features_data_phone.csv
+ERROR shelving: DataViz
+ERROR shelving: cluster_features
+ERROR shelving: dataset
+ERROR shelving: eval
+ERROR shelving: f
+ERROR shelving: feature_names
+ERROR shelving: features
+ERROR shelving: features_2
+ERROR shelving: features_3
+ERROR shelving: features_4
+ERROR shelving: file
+ERROR shelving: freq_features
+ERROR shelving: fs
+ERROR shelving: learner
+ERROR shelving: ordered_scores
+ERROR shelving: possible_feature_sets
+ERROR shelving: prepare
+ERROR shelving: selected_features
+ERROR shelving: test_X
+ERROR shelving: test_y
+ERROR shelving: time_features
+ERROR shelving: train_X
+ERROR shelving: train_y
+2020-06-21 10:55:10.105568
+possible feature sets 0
+2020-06-21 10:55:10.107569
+
+Repeat 0
+Random Forest
+Traceback (most recent call last):
+  File "Experiment.py", line 143, in <module>
+    experiment(features_phone_data)
+  File "Experiment.py", line 102, in experiment
+    selected_train_X, train_y, selected_test_X, gridsearch=True, print_model_details=True
+  File "/home/krvrpting/ML4QS_group25/Python3Code/Chapter7/LearningAlgorithms.py", line 251, in random_forest
+    print(rf.best_estimator_)
+AttributeError: 'GridSearchCV' object has no attribute 'best_estimator_'
+krvrpting@ml4qs-instance-3:~/ML4QS_group25/Python3Code$
