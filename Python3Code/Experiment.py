@@ -53,11 +53,12 @@ def experiment(file):
     features_3 = list(set().union(basic_features, time_features, freq_features))
     features_4 = list(set().union(basic_features, time_features, freq_features, cluster_features))
 
-    print('feature selection')
-    fs = FeatureSelectionClassification()
-    features, selected_features, ordered_scores = fs.forward_selection(N_FORWARD_SELECTION,
-                                                                      train_X[features_4], train_y)
-    log([str(ordered_scores), str(selected_features)])
+    # print('feature selection')
+    # fs = FeatureSelectionClassification()
+    # features, selected_features, ordered_scores = fs.forward_selection(N_FORWARD_SELECTION,
+    #                                                                   train_X[features_4], train_y)
+    # log([str(ordered_scores), str(selected_features)])
+    selected_features = ['gyr_y_temp_std_ws_1200', 'acc_z_temp_mean_ws_120', 'acc_x_temp_mean_ws_120', 'gyr_x_temp_std_ws_2400', 'gyr_z_max_freq', 'gyr_y_freq_1.9_Hz_ws_40', 'acc_z_freq_0.4_Hz_ws_40', 'gyr_z_freq_1.2_Hz_ws_40', 'gyr_x_freq_0.2_Hz_ws_40', 'acc_z_freq_1.0_Hz_ws_40', 'acc_x_freq_0.2_Hz_ws_40', 'acc_y_freq_1.9_Hz_ws_40', 'gyr_x_temp_mean_ws_1200', 'acc_z_freq_1.9_Hz_ws_40', 'acc_x_temp_std_ws_120', 'gyr_z_temp_std_ws_120', 'gyr_y_freq_1.5_Hz_ws_40', 'gyr_z_temp_mean_ws_120', 'gyr_x_freq_0.0_Hz_ws_40', 'acc_z_freq_0.6_Hz_ws_40']
     DataViz.plot_xy(x=[range(1, N_FORWARD_SELECTION + 1)], y=[selected_features],
                     xlabel='number of features', ylabel='accuracy')
 
