@@ -248,7 +248,6 @@ class ClassificationAlgorithms:
                                  'criterion':['gini', 'entropy']}]
             rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1,
                               n_jobs=-1, refit=True)
-            print(rf.best_estimator_)
         else:
             rf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion, n_jobs=-1)
 
