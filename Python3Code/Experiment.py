@@ -65,8 +65,6 @@ def experiment(file):
     learner = ClassificationAlgorithms()
     eval = ClassificationEvaluation()
 
-    performance_training = []
-    performance_test = []
 
     possible_feature_sets = [basic_features, features_2, features_3,
                              features_4, selected_features]
@@ -93,19 +91,15 @@ def experiment(file):
 
         # First we run our non deterministic classifiers a number of times to average their score.
 
-        performance_tr_nn = 0
         performance_tr_rf = 0
-        performance_tr_svm = 0
-        performance_te_nn = 0
         performance_te_rf = 0
-        performance_te_svm = 0
 
         for repeat in range(0, N_KCV_REPEATS):
             print(datetime.now())
             print('\nRepeat', repeat)
             print('Random Forest')
             class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.random_forest(
-                selected_train_X, train_y, selected_test_X, gridsearch=True
+                selected_train_X, train_y, selected_test_X, gridsearch=True, print_model_details=True
             )
             test_cm = eval.confusion_matrix(test_y, class_test_y, class_train_prob_y.columns)
 
@@ -124,7 +118,7 @@ def experiment(file):
 
         print('decision tree')
         class_train_y, class_test_y, class_train_prob_y, class_test_prob_y = learner.decision_tree(
-            selected_train_X, train_y, selected_test_X, gridsearch=True
+            selected_train_X, train_y, selected_test_X, gridsearch=True, print_model_details=True
         )
         performance_tr_dt = eval.accuracy(train_y, class_train_y)
         performance_te_dt = eval.accuracy(test_y, class_test_y)

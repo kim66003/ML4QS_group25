@@ -176,7 +176,7 @@ class ClassificationAlgorithms:
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'criterion':['gini', 'entropy']}]
             dtree = GridSearchCV(DecisionTreeClassifier(), tuned_parameters, cv=5, scoring='accuracy', n_jobs=-1,
-                                 verbose=2)
+                                 verbose=1)
         else:
             dtree = DecisionTreeClassifier(min_samples_leaf=min_samples_leaf, criterion=criterion)
 
@@ -242,11 +242,13 @@ class ClassificationAlgorithms:
     def random_forest(self, train_X, train_y, test_X, n_estimators=10, min_samples_leaf=5, criterion='gini', print_model_details=False, gridsearch=True):
 
         if gridsearch:
+
             tuned_parameters = [{'min_samples_leaf': [2, 10, 50, 100, 200],
                                  'n_estimators':[10, 50, 100],
                                  'criterion':['gini', 'entropy']}]
-            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=2,
+            rf = GridSearchCV(RandomForestClassifier(), tuned_parameters, cv=5, scoring='accuracy', verbose=1,
                               n_jobs=-1)
+            print(rf.best_estimator_)
         else:
             rf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, criterion=criterion, n_jobs=-1)
 
