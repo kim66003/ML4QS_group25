@@ -40,7 +40,7 @@ class VisualizeDataset:
 
         for format in formats:
             if self.save_path is not None:
-                save_path = self.figures_dir / f'{self.save_path}.{format}'
+                save_path = Path(self.figures_dir / f'{self.save_path}.{format}')
             else:
                 if save_path is None:
                     save_path = self.figures_dir / f'{fig_name}.{format}'

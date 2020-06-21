@@ -19,6 +19,8 @@ from util.VisualizeDataset import VisualizeDataset
 from datetime import datetime
 from Load import *
 import shelve
+from matplotlib import rcParams
+rcParams.update({'figure.autolayout': True})
 
 N_FORWARD_SELECTION = 20
 
@@ -39,7 +41,8 @@ def log(list):
 
 def experiment(file):
     dataset = pd.read_csv(file, index_col=time_col)
-    DataViz = VisualizeDataset(file.split('.')[0] + __file__, show=False)
+    DataViz = VisualizeDataset(__file__.split('.')[0] + file.split('.')[0].split('/')[1] + '.py', show=True)
+    print(DataViz.figures_dir)
     dataset.index = pd.to_datetime(dataset.index)
     prepare = PrepareDatasetForLearning()
     train_X, test_X, train_y, test_y = prepare.split_single_dataset_classification(dataset, ['label'], 'like', 0.7,
@@ -72,12 +75,12 @@ def experiment(file):
     feature_names = ['Basic features', 'Features with time', 'Features with frequency', 'Features with cluster',
                      'Selected features']
 
-    with shelve.open('temp/shelve.out', 'n') as f:
-        for key in dir():
-            try:
-                f[key] = globals()[key]
-            except:
-                print('ERROR shelving: {0}'.format(key))
+    # with shelve.open('temp/shelve.out', 'n') as f:
+    #     for key in dir():
+    #         try:
+    #             f[key] = globals()[key]
+    #         except:
+    #             print('ERROR shelving: {0}'.format(key))
 
     N_KCV_REPEATS = 1
 

@@ -58,7 +58,6 @@ class PrepareDatasetForLearning:
         if matching == 'like':
             dataset = self.assign_label(dataset, class_labels)
             class_labels = self.class_col
-            print(dataset.shape)
         elif len(class_labels) == 1:
             class_labels = class_labels[0]
 
@@ -85,8 +84,6 @@ class PrepareDatasetForLearning:
             test_set_y = dataset.iloc[end_training_set:len(dataset.index), class_label_indices]
         # For non temporal data we use a standard function to randomly split the dataset.
         else:
-            print(dataset.iloc[:,features].shape)
-            print(dataset.iloc[:,class_label_indices].shape)
             training_set_X, test_set_X, training_set_y, test_set_y = train_test_split(dataset.iloc[:,features],
                                                                                       dataset.iloc[:,class_label_indices], test_size=(1-training_frac), stratify=dataset.iloc[:,class_label_indices], random_state=random_state)
         return training_set_X, test_set_X, training_set_y, test_set_y
