@@ -54,12 +54,12 @@ periodic_predictor_cols = ['acc_x', 'acc_y', 'acc_z', "gyr_x",
     "gyr_y", "gyr_z", ]
 
 for ws in window_sizes:
-    dataset_copy = NumAbs.abstract_numerical(dataset_copy, periodic_predictor_cols, ws, 'mean')
-    dataset_copy = NumAbs.abstract_numerical(dataset_copy, periodic_predictor_cols, ws, 'std')
+    dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'mean')
+    dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'std')
     print('window size', ws)
 
 print(dataset_copy.columns)
-DataViz.plot_dataset(dataset_copy, ['acc_x', 'acc_y', 'acc_z', 'label'], ['exact', 'like', 'like', 'like'], ['line', 'line', 'line', 'points'])
+DataViz.plot_dataset(dataset, ['acc_x', 'acc_y', 'acc_z', 'label'], ['exact', 'like', 'like', 'like'], ['line', 'line', 'line', 'points'])
 
 # ws = int(float(0.5*60000)/milliseconds_per_instance)
 # dataset = NumAbs.abstract_numerical(dataset, periodic_predictor_cols, ws, 'mean')
